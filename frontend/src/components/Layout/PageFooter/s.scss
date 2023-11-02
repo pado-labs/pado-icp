@@ -1,0 +1,75 @@
+@media (max-width: 576px) {
+  .pageFooter {
+    height: 7.6923rem;
+    background: var(--black-pearl, #0a1214);
+    .con {
+      @include fcbs;
+    }
+    .pageFooterT {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+      .con {
+        padding: 1.0256rem 0;
+        @include fcsc;
+        gap: 1.0256rem;
+      }
+      .logo {
+        width: 2.0372rem;
+      }
+      .qs {
+        @include fcsc;
+        gap: 0.4103rem;
+        .q {
+          font-size: 0.4103rem;
+          line-height: 130%;
+        }
+        .s {
+          width: 8.8718rem;
+          height: 1.2308rem;
+          border-radius: 0.1795rem;
+          .pInputWrapper {
+            .pInput {
+              padding: 0 0.2051rem;
+              font-size: 0.4103rem;
+              line-height: 130%;
+              color: var(--light-text, #bcbfc2);
+              &::placeholder {
+                color: var(--light-text, #bcbfc2);
+              }
+            }
+          }
+
+          .pButton {
+            width: 3.5897rem;
+            height: 1.0256rem;
+            border-radius: 0.1026rem;
+            font-size: 0.4103rem;
+            line-height: 130%;
+          }
+        }
+      }
+    }
+    .pageFooterC {
+      height: 1.9231rem;
+      @include fccc;
+      .con {
+        @include fcbc;
+        flex-direction: column-reverse;
+        gap: 0.4103rem;
+      }
+      .copyright,
+      .copyright > a {
+        gap: 0.2051rem;
+        font-size: 0.3077rem;
+        line-height: 130%;
+      }
+      .friends {
+        gap: 0.5128rem;
+        > li {
+          img {
+            width: 0.359rem;
+          }
+        }
+      }
+    }
+  }
+}

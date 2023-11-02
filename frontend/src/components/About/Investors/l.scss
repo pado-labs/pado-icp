@@ -1,0 +1,47 @@
+@media (max-width: 1439px) {
+  .investorsAPartners {
+    padding: 0.8333rem 0;
+    gap: 0.8333rem;
+    .contentWidth {
+      gap: 0.2778rem;
+    }
+    .title {
+      gap: 0.1111rem;
+      h2 {
+        font-size: 0.4063rem;
+      }
+      h3 {
+        font-size: 0.125rem;
+      }
+    }
+    .investors {
+      padding-top: 0.2778rem;
+      gap: 0.4583rem;
+      .investor {
+        &:first-child {
+          .investorIcon {
+            width: 1.5876rem;
+          }
+        }
+        &:nth-child(2) {
+          .investorIcon {
+            width: 1.8557rem;
+          }
+        }
+        &:nth-child(3) {
+          .investorIcon {
+            width: 1.1652rem;
+          }
+        }
+        &:nth-child(4) {
+          .investorIcon {
+            width: 0.7559rem;
+          }
+        }
+      }
+    }
+    .partners {
+      padding: 0.1181rem 0;
+    }
+  }
+}

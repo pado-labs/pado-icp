@@ -1,0 +1,33 @@
+@media (max-width:1439PX) {
+  .sectionBanner.aboutSectionBanner {
+    .sectionContent {
+      padding-top: 1.9444rem;
+      .bannerTitle {
+        width: 7.7013rem;
+      }
+      .bannerBtn {
+        width: 1.7292rem;
+        height: .4444rem;
+        border-radius: .0278rem;
+        padding: .0278rem 0 .0278rem .0278rem;
+
+        .iconBannerBtnImg {
+          width: 1.0347rem;
+        }
+        .btnText {
+          font-size: .125rem;
+        }
+        &:not(.mobile):hover {
+          .iconVideoPlay {
+            width: .2222rem;
+          }
+        }
+      }
+      .pButton {
+        font-size: .125rem;
+        width: 1.7361rem;
+        height: .4444rem;
+      }
+    }
+  }
+}

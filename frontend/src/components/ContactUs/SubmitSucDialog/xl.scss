@@ -1,0 +1,51 @@
+.submitSucDialog {
+  @include fcsc;
+  gap: 24px;
+  width: 454px;
+  height: 307px;
+  box-sizing: border-box;
+  padding-top: 64px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0px 16px 20px 0px rgba(0, 0, 0, 0.1);
+  position: relative;
+  .iconClose {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 24px;
+    height: 24px;
+  }
+  .iconSuc {
+    width: 78px;
+  }
+  .desc {
+    width: 346px;
+    @include fcsc;
+    gap: 16px;
+    > h3 {
+      color: var(--black-pearl, #0a1214);
+      text-align: center;
+
+      /* Pado Desktop/H4 */
+      font-family: Overpass;
+      font-size: 22.5px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 120%; /* 27px */
+    }
+    > p {
+      color: var(--black-pearl, #0a1214);
+      text-align: center;
+
+      /* Pado Desktop/Body 2 */
+      font-family: Overpass;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 140%; /* 25.2px */
+      opacity: 0.6000000238418579;
+    }
+  }
+}

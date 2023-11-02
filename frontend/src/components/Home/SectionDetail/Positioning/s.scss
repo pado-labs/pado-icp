@@ -1,0 +1,33 @@
+@media (max-width: 576px) {
+  .detail1.detail3 {
+    height: 693/390 * 100vw;
+    background-image: url("../../../../assets/img/home/detailPositionBgS.svg");
+    padding: 80px 0 0 0 !important;
+    @include fcsc;
+    .contentWid {
+      @include fcbc;
+      height: 100%;
+    }
+    .textCon {
+      width: 100%;
+      text-align: center;
+      @include fcsc;
+      > h3 {
+        text-align: center;
+      }
+      .detailCon {
+        width: 100%;
+        text-align: center;
+        font-size: 0.4103rem;
+        line-height: 130%;
+        opacity: 0.800000011920929;
+        letter-spacing: 0.5PX;
+      }
+    }
+    .illustrationWrapper {
+      > img {
+        width: 10rem !important;
+      }
+    }
+  }
+}

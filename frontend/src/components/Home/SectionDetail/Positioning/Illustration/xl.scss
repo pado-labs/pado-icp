@@ -1,0 +1,278 @@
+
+@keyframes rotateCircleAntiClockwise {
+  0% {
+    transform: translateX(-50%) rotateZ(0);
+  }
+  25% {
+    transform: translateX(-50%) rotateZ(-15deg);
+  }
+  75% {
+    transform: translateX(-50%) rotateZ(15deg);
+  }
+  100% {
+    transform: translateX(-50%) rotateZ(0deg);
+  }
+}
+
+@keyframes rotateCircleBallAntiClockwise {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  25% {
+    transform: rotateZ(15deg);
+  }
+  75% {
+    transform: rotateZ(-15deg);
+  }
+  100% {
+    transform: rotateZ(0deg);
+  }
+}
+
+@keyframes rotateCircleClockwise {
+  0% {
+    transform: translateX(-50%) rotateZ(0);
+  }
+  25% {
+    transform: translateX(-50%) rotateZ(15deg);
+  }
+  75% {
+    transform: translateX(-50%) rotateZ(-15deg);
+  }
+  100% {
+    transform: translateX(-50%) rotateZ(0deg);
+  }
+}
+
+@keyframes rotateCircleBallClockwise {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  25% {
+    transform: rotateZ(-15deg);
+  }
+  75% {
+    transform: rotateZ(15deg);
+  }
+  100% {
+    transform: rotateZ(0deg);
+  }
+}
+
+@keyframes rotateCircleClockwise2 {
+  0% {
+    transform: translateX(-50%) rotateZ(0);
+  }
+  25% {
+    transform: translateX(-50%) rotateZ(10deg);
+  }
+  75% {
+    transform: translateX(-50%) rotateZ(-10deg);
+  }
+  100% {
+    transform: translateX(-50%) rotateZ(0deg);
+  }
+}
+
+@keyframes rotateCircleBallClockwise2 {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  25% {
+    transform: rotateZ(-10deg);
+  }
+  75% {
+    transform: rotateZ(10deg);
+  }
+  100% {
+    transform: rotateZ(0deg);
+  }
+}
+
+.illustrationWrapperPosition {
+  width: 630px;
+  height: 529px;
+  display: flex;
+  .am {
+    position: relative;
+    width: 528.137px;
+    height: 528.137px;
+    .layer1,
+    .layer2,
+    .layer3 {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .border {
+      border-radius: 50%;
+      border: 0.6px solid var(--black-pearl, #0a1214);
+      @include frcc;
+      align-items: flex-end;
+      position: relative;
+      &.border7 {
+        > img {
+          width: 293px;
+          height: 293px;
+          border-radius: 50%;
+        }
+      }
+    }
+    .circle {
+      position: absolute;
+      content: "";
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 50%;
+      border: 0.6px solid transparent;
+      .ball {
+        z-index: 1;
+        position: absolute;
+      }
+    }
+    .layer2 {
+      .circle1 {
+        animation: rotateCircleClockwise 6s linear infinite;
+        .iconPolygon {
+          width: 47.86px;
+          height: 47.86px;
+          left: 97.4px;
+          top: 19.31px;
+          animation: rotateCircleBallClockwise 6s linear infinite;
+        }
+      }
+      .circle2 {
+        animation: rotateCircleAntiClockwise 6s linear infinite;
+        > .iconZan {
+          width: 44.501px;
+          height: 45.341px;
+          top: 50%;
+          left: 100%;
+          animation: rotateCircleBallAntiClockwise 6s linear infinite;
+          top: 64.03px;
+          left: 410.56px;
+        }
+      }
+      .circle3 {
+        animation: rotateCircleClockwise 6s linear infinite;
+        .iconICP{
+          width: 44.5px;
+          left: 44.82px;
+          top: 47.17px;
+          animation: rotateCircleBallClockwise 6s linear infinite;
+        }
+      }
+
+      .circle4 {
+        animation: rotateCircleAntiClockwise 6s linear infinite;
+        > img {
+          width: 48.699px;
+          height: 48.699px;
+          animation: rotateCircleBallAntiClockwise 6s linear infinite;
+        }
+        .iconEas {
+          left: 212.98px;
+          top: -23.41px;
+        }
+      }
+      .circle6 {
+        >.card {
+          width: 116.696px;
+          height: 116.696px;
+          left: 241.66px;
+          top: 28.24px;
+        }
+      }
+    }
+
+    .border1,
+    .circle1 {
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+    }
+    .border2,
+    .circle2 {
+      width: 488.891px;
+      height: 488.891px;
+    }
+    .border3,
+    .circle3 {
+      width: 449.645px;
+      height: 449.645px;
+    }
+    .border4,
+    .circle4 {
+      width: 411.52px;
+      height: 411.52px;
+    }
+    .border5,
+    .circle5 {
+      width: 371.153px;
+      height: 371.153px;
+    }
+    .border6,
+    .circle6 {
+      width: 333.029px;
+      height: 333.029px;
+    }
+    .layer3 {
+      .lBall,
+      .mBall,
+      .sBall {
+        border-radius: 50%;
+        position: absolute;
+      }
+      .circle2 {
+        .lBall {
+          width: 28.548px;
+          height: 28.548px;
+          background-color: #34dbff;
+          left: 162.86px;
+          top: 1.06px;
+        }
+      }
+      .circle4 {
+        animation: rotateCircleClockwise 6s linear infinite;
+        .iconBnb {
+          width: 48.699px;
+          height: 48.699px;
+          // left: -9.61px;
+          // top: 133.6px;
+          left: -9.61px;
+          top: 133.6px;
+          animation: rotateCircleBallClockwise 6s linear infinite;
+        }
+      }
+      .circle5 {
+        .mBall {
+          width: 19.312px;
+          height: 19.312px;
+          background-color: #43ffa8;
+          left: 241.41px;
+          top: 2.55px;
+        }
+        .sBall {
+          width: 11.755px;
+          height: 11.755px;
+          background-color: #a9ffd7;
+          left: 0.41px;
+          top: 225.06px;
+        }
+      }
+      .circle6 {
+        animation: rotateCircleClockwise 6s linear infinite;
+        .iconLinea{
+          width: 48.69px;
+          left: 75.52px;
+          top: -8.44px;
+          animation: rotateCircleBallClockwise 6s linear infinite;
+        }
+      }
+      
+    }
+  }
+}

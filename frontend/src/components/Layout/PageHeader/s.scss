@@ -1,0 +1,14 @@
+@media (max-width: 576px) {
+  .pageHeader {
+    // width: $centerWidthS;
+    height: $headerHeightS;
+    .contentWidth {
+      .logo {
+        width: 2.0372rem;
+      }
+      .iconMenu {
+        width: 0.6154rem;
+      }
+    }
+  }
+}

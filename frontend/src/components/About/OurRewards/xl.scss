@@ -1,0 +1,105 @@
+.ourRewards {
+  padding: 120px 0 140px 0;
+  @include fcsc;
+  gap: 80px;
+  > h2 {
+    color: var(--black-pearl, #0a1214);
+    text-align: center;
+    font-family: Overpass;
+    font-size: 58.5px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 110%; /* 64.35px */
+    letter-spacing: -0.292px;
+  }
+  .rewards {
+    width: 100%;
+    .reward {
+      cursor: pointer;
+      @include frbs;
+      gap: 40px;
+      padding: 32px 0;
+      border-top: 1px solid #e7e7e7;
+      .aboutIcon {
+        width: 80px;
+      }
+      .descInfo {
+        flex: 1;
+        width: 100%;
+        .pTag {
+          font-size: 18px;
+        }
+        > h5 {
+          color: var(--black-pearl, #0a1214);
+          font-family: Overpass;
+          font-size: 31.5px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 100%; /* 31.5px */
+          // text-transform: capitalize;
+          padding-top: 8px;
+          text-align: left;
+        }
+        .desc {
+          padding-top: 20px;
+          color: var(--dark-text, #5b5b5b);
+          /* Pado Desktop/Body 2 */
+          font-family: Overpass;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 300;
+          line-height: 140%; /* 25.2px */
+
+          display: none;
+          .more {
+            @include frcc;
+            gap: 8px;
+            color: var(--black-pearl, #0a1214);
+            text-align: right;
+
+            /* Pado Desktop/Body 3 */
+            font-family: Overpass;
+            font-size: 14.4px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: 110%; /* 15.84px */
+            .iconArrowRight {
+              width: 14px;
+            }
+            .iconArrowRightWrapper {
+              width: 14px;
+              height: 14px;
+              background-image: url("../../../assets/img/home/iconArrowRight.svg");
+              background-size: 100% 100%;
+            }
+            &:active,
+            &:hover {
+              color: #515151;
+              .iconArrowRightWrapper {
+                background-image: url("../../../assets/img/home/iconArrowRightHover.svg");
+              }
+            }
+          }
+        }
+      }
+      &:last-child {
+        border-bottom: 1px solid #e7e7e7;
+      }
+      &:hover,
+      &.active {
+        gap: 20px;
+        .aboutIcon {
+          width: 100px;
+        }
+        .desc {
+          @include frbc;
+          align-items: flex-end;
+          > p {
+            text-align: left;
+            max-width: 944px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+.pButton {
+  cursor: pointer;
+  @include frcc;
+  // box-sizing: border-box;
+  // gap: 8px;
+  width: 123px;
+  height: 40px;
+  // padding: 12px 20px;
+  @include frcc;
+  // gap: 10px;
+  border-radius: 4px;
+  border: 1px solid $colBtnBorder;
+  background: transparent;
+  // .btnText {
+  font-family: Overpass;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 140%;
+  color: $colBtnBorder;
+  // }
+  .prevfix,
+  .suffix {
+    width: 14px;
+  }
+  .preffix {
+    margin-right: 4px;
+  }
+  .suffix {
+    margin-left: 4px;
+  }
+  &:hover,
+  &:active {
+    background: $colLBlack;
+    border-color: $colLBlack;
+    color: #fff;
+  }
+  &.disabled {
+    cursor: not-allowed;
+    border-color: gray; //TODO
+  }
+}

@@ -1,0 +1,45 @@
+$slickWidth: 340px;
+
+.pSlick2 {
+  width: 100vw;
+  // margin-left: -160px;
+  .mySlickItem {
+    // width: 223px;
+    opacity: 0.4;
+    padding: 17px 40px 17px 0;
+    box-sizing: border-box;
+    &:hover{
+      opacity: 1;
+    }
+    .img0{
+      width: 188px !important;
+    }
+    .img1{
+      width: 162px !important;
+    }
+    .img2{
+      width: 154px !important;
+    }
+    .img3{
+      width: 173px  !important;
+    }
+    .img4{
+      width: 202.3125px !important;
+    }
+    .img5{
+      width: 157px !important;
+    }
+    .img6{
+      width: 227.1875px !important;
+    }
+    .img7{
+      width: 200px !important;
+    }
+    .img8{
+      width: 173.98px !important;
+    }
+  }
+  .slick-arrow {
+    display: none !important;
+  }
+}

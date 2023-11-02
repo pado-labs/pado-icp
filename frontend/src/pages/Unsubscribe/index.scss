@@ -1,0 +1,90 @@
+@import "@css/pFlex.scss";
+.pageUnsubscibe {
+  height: 100vh;
+  margin-top: -1 * $headerHeight;
+  padding-top: $headerHeight;
+  background: var(--solitude, #f8f9fa);
+  > content {
+    @include fcsc;
+    gap: 24px;
+    padding-top: 120px;
+    .iconCancel {
+      width: 230px;
+    }
+    .desc {
+      @include fcsc;
+      gap: 16px;
+      width: 630px;
+      > h3 {
+        color: var(--black-pearl, #0a1214);
+        text-align: center;
+        font-family: Overpass;
+        font-size: 31.5px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 130%; /* 41.6px */
+      }
+      > p {
+        color: var(--dark-text, #5b5b5b);
+        text-align: center;
+        /* Pado Desktop/Body 2 */
+        font-family: Overpass;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 140%; /* 25.2px */
+        > a {
+          color: var(--pado-sky-blue-600, #2aafcc);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1439px) {
+  .pageUnsubscibe {
+    margin-top: -1 * $headerHeightL;
+    padding-top: $headerHeightL;
+    > content {
+      gap: 0.1667rem;
+      padding-top: 0.8333rem;
+      .iconCancel {
+        width: 1.5972rem;
+      }
+      .desc {
+        gap: 0.1111rem;
+        width: 4.375rem;
+        > h3 {
+          font-size: 0.2222rem;
+        }
+        > p {
+          font-size: 0.125rem;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 576px) {
+  .pageUnsubscibe {
+    margin-top: -1 * $headerHeightS;
+    padding-top: $headerHeightS;
+    > content {
+      gap: 0.4103rem;
+      padding-top: 4.2051rem;
+      .iconCancel {
+        width: 1.7949rem;
+      }
+      .desc {
+        width: 7.8718rem;
+        gap: 0.2051rem;
+        > h3 {
+          font-size: 0.4103rem;
+        }
+        > p {
+          font-size: 0.21875rem;
+          line-height: 130%;
+        }
+      }
+    }
+  }
+}

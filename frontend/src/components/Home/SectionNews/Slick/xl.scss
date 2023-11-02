@@ -1,0 +1,147 @@
+$slickWidth: 340px;
+
+.pSlick {
+  // margin-left: -60px;
+  .mySlickItem {
+    box-sizing: border-box;
+    width: $slickWidth !important ;
+    height: 238px;
+    padding: 24px 0;
+    border-radius: 12px;
+    // background: #141b1d;
+    cursor: pointer;
+
+    > a {
+      width: $slickWidth;
+      height: 100%;
+      @include fcbs;
+      .descT {
+        box-sizing: border-box;
+        @include fcss;
+        gap: 16px;
+        padding: 0 15px;
+        border-left: 1px solid $colBtnBorder;
+        .dateWrapper {
+          @include frsc;
+          gap: 8px;
+          // color: var(--dark-text, #3a3b3c);
+          color: #3a3b3c;
+          /* PADO Desktop/Body 3 */
+          font-family: Overpass;
+          font-size: 13.5px;
+          font-style: normal;
+          font-weight: 300;
+          line-height: 110%; /* 14.85px */
+          .separtor {
+            width: 1px;
+            height: 9px;
+            // color: var(--dark-text, #3a3b3c);
+            background-color: #3a3b3c;
+            opacity: 0.4;
+          }
+        }
+        .title {
+          // color: var(--black-pearl, #0a1214);
+          color: $colBtnBorder;
+          /* PADO Desktop/H4 */
+          font-family: Overpass;
+          font-size: 22.5px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 120%; /* 27px */
+          text-align: left;
+        }
+        .desc {
+          overflow: hidden;
+          // color: var(--dark-text, #3a3b3c);
+          color: #3a3b3c;
+          overflow: hidden;
+
+          text-overflow: ellipsis;
+          // word-break: break-all;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+
+          // white-space: nowrap;
+          /* PADO Desktop/Body 2 */
+          font-family: Overpass;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 300;
+          line-height: 140%; /* 25.2px */
+          text-align: left;
+          opacity: 0.6;
+        }
+      }
+      .descC {
+        padding: 0 16px;
+        color: $colBtnBorder;
+        /* PADO Desktop/Body 2 */
+        font-family: Overpass;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 140%; /* 25.2px */
+        align-self: flex-end;
+        display: none;
+      }
+    }
+  }
+  &.pc {
+    // .slick-center {
+    .mySlickItem:hover {
+      border-radius: 10px;
+      background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0) 32.59%,
+          rgba(52, 219, 255, 0.1) 100%
+        ),
+        #fff;
+      box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.08);
+      > a {
+        .descT {
+          border-left: 0;
+          padding: 0 16px;
+        }
+        .descC {
+          display: inline-flex;
+        }
+      }
+    }
+    // }
+    .slick-arrow.slick-next {
+      width: 51px;
+      height: 15px;
+      display: flex !important;
+      @include frsc;
+      align-self: flex-end;
+      gap: 8px;
+      position: relative;
+      color: var(--black-pearl, #0a1214);
+      text-align: right;
+
+      /* PADO Desktop/Body 3 */
+      font-family: Overpass;
+      font-size: 13.5px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 110%; /* 14.85px */
+      position: absolute;
+      content: "";
+      left: 1229px;
+      top: 230px;
+      &:before {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        content: "";
+        width: 14px;
+        height: 14px;
+        background: url("../../../../assets/img/home/iconArrowRight.svg");
+        background-size: 100% 100%;
+      }
+    }
+  }
+}

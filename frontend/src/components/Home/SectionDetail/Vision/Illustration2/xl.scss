@@ -1,0 +1,54 @@
+@keyframes mask {
+  0% {
+    -webkit-mask-size: 74px 74px;
+    -webkit-mask-position: 101.75px 203.5px;
+  }
+  25% {
+    -webkit-mask-size: 74px 74px;
+    -webkit-mask-position: 203.5px 203.5px;
+  }
+  50% {
+    -webkit-mask-size: 175.5px 175.5px;
+    -webkit-mask-position: 101.75px 101.75px;
+  }
+  75% {
+    -webkit-mask-size: 175.5px 175.5px;
+    -webkit-mask-position: 203.5px 101.75px;
+  }
+  100% {
+    -webkit-mask-size: 277.5px 277.5px;
+    -webkit-mask-position: 101.75px 101.75px;
+  }
+}
+
+.versionIllustrationWrapper {
+  width: 630px;
+  height: 529px;
+  @include frcc;
+  position: relative;
+  
+  .bg,
+  .visionIllustrationCore {
+    width: 481px;
+    height: 481px;
+  }
+  .bg {
+    position: absolute;
+    z-index: -2;
+  }
+
+  .visionIllustrationCore {
+    z-index: 1;
+    position: absolute;
+    z-index: 1;
+    background-image: url(../../../../../assets/img/home/detailVision.svg);
+    background-position: 203.5px 203.5px;
+    // background-size: 74px 74px;
+    background-repeat: no-repeat;
+    // background-size: 100% 100%;
+    // -webkit-mask-repeat: no-repeat;
+    // -webkit-mask-image: url("../../../../../assets/img/home/blackMask.svg");
+
+    // animation: mask 3s linear infinite forwards;
+  }
+}

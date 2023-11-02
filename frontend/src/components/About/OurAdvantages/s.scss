@@ -1,0 +1,49 @@
+@media (max-width: 576px) {
+  .ourAdvantages {
+    padding: 0 0 2.0513rem 0;
+    // @include fcsc;
+    gap: 1.0256rem;
+    > h2 {
+      font-size: 0.9231rem;
+      line-height: 110%; /* 64.35px */
+      letter-spacing: -0.18px;
+    }
+    .advantages {
+      @include fcss;
+      // width: 100%;
+      gap: 0.6154rem;
+      .advantage {
+        @include frss;
+        gap: 0.2564rem;
+        box-sizing: border-box;
+        width: 100%;
+        height: auto;
+        padding: 0;
+        .headerIcon {
+          width: 1.0256rem;
+        }
+        .descWrapper {
+          flex: 1;
+          > h5 {
+            font-size: 0.7179rem;
+            line-height: 1.0256rem;
+            padding-top: 0;
+          }
+          .desc1,
+          .desc2 {
+            font-size: 0.4103rem;
+            font-weight: 300;
+            line-height: 130%;
+          }
+          .desc1 {
+            padding-top: 0.3077rem;
+          }
+          .desc2 {
+            padding-top: 0;
+            letter-spacing: -0.1px;
+          }
+        }
+      }
+    }
+  }
+}

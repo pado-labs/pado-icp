@@ -1,0 +1,77 @@
+@media (max-width: 576px) {
+  .ourRewards {
+    padding: 2.0513rem 0 2.5641rem 0;
+    gap: 1.0256rem;
+    > h2 {
+      font-size: 0.9231rem;
+      letter-spacing: -0.18px;
+    }
+    .rewards {
+      width: 100%;
+      @include fcsc;
+      gap: 1.0256rem;
+      .reward {
+        width: 100%;
+        @include fcsc;
+        gap: 0.6154rem;
+        padding: 0;
+        border-top: 0;
+        &:nth-child(2) {
+          .descInfo{
+            > h5 {
+              width: 5.8974rem;
+            }
+          }
+        }
+        .aboutIcon {
+          width: 1.2308rem;
+        }
+        .descInfo {
+          @include fcsc;
+          width:100%;
+          .pTag {
+            // margin-top: .6154rem;
+            font-size: 0.4103rem;
+          }
+          > h5 {
+            font-size: 0.7179rem;
+            line-height: 115%;
+            text-transform: none;
+            padding-top: 0.4103rem;
+            text-align: center;
+            // text-transform: capitalize;
+            letter-spacing: -0.24PX;
+          }
+          .desc {
+            padding-top: 0.4103rem;
+            font-size: 0.4103rem;
+            line-height: 130%;
+            display: flex;
+            @include fcsc;
+            gap: 0.6154rem;
+            letter-spacing: -0.1PX;
+            >p{
+              width: 100%;
+            }
+            .more {
+              gap: 0;
+              text-align: center;
+              font-size: 0.4103rem;
+              line-height: 130%;
+              width: 3.5897rem;
+              height: 0.9231rem;
+              border-radius: 2px;
+              border: 0.5px solid var(--light-text, #bcbfc2);
+              .iconArrowRightWrapper {
+                display: none;
+              }
+            }
+          }
+        }
+        &:last-child {
+          border-bottom: 0;
+        }
+      }
+    }
+  }
+}

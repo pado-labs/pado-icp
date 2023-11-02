@@ -1,0 +1,38 @@
+$slickWidthS: 6.9744rem;
+
+@media (max-width: 576px) {
+  .pSlick {
+    .mySlickItem {
+      width: $slickWidthS !important ;
+      height: 3.5897rem;
+      padding: 0;
+      border-radius: 0;
+      margin-left: -5.7436rem;
+      > a {
+        width: $slickWidthS;
+        .descT {
+          gap: 0.2051rem;
+          padding: 0 0.4103rem;
+          .dateWrapper {
+            gap: 0.2051rem;
+            font-size: 0.3077rem;
+            line-height: 130%; /* 14.85px */
+            .separtor {
+              height: 0.1795rem;
+            }
+          }
+          .title {
+            font-size: 0.5128rem;
+            line-height: 110%;
+            letter-spacing: -0.1px;
+          }
+          .desc {
+            font-size: 0.4103rem;
+            font-weight: 300;
+            line-height: 130%;
+          }
+        }
+      }
+    }
+  }
+}

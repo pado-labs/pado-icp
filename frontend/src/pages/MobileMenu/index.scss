@@ -1,0 +1,29 @@
+@import "@css/pVars.scss";
+@import "@css/pFlex.scss";
+.menuPage {
+  width: 10rem;
+  height: calc(100vh - $headerHeightS);
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.2) 28.98%,
+      rgba(52, 219, 255, 0.2) 100%
+    ),
+    #fff;
+  @include fcsc;
+  padding-top: 3.641rem;
+  > ul {
+    @include fccc;
+    gap: 1.641rem;
+    > li {
+      color: var(--black-pearl, #0a1214);
+      text-align: center;
+      /* Pado Mobile/H2 */
+      font-family: Overpass;
+      font-size: 0.9231rem;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 110%; /* 39.6px */
+      letter-spacing: -0.0046rem;
+    }
+  }
+}

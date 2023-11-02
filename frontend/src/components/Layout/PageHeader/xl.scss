@@ -1,0 +1,46 @@
+.pageHeader {
+  @include frcc;
+  height: $headerHeight;
+  position: sticky;
+  z-index: 3;
+  top: 0;
+  &.isScroll {
+    background: linear-gradient(124deg, #cbfaff 0%, rgba(255, 255, 255, 0) 100%),
+      #fff;
+  }
+  .contentWidth {
+    @include frbc;
+    .logo {
+      cursor: pointer;
+      width: 127px;
+    }
+    .navs {
+      @include frsc;
+      gap: 20px;
+      .navItem {
+        cursor: pointer;
+        padding: 4px 16px;
+        font-family: Overpass;
+        font-size: 14.4px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 110%;
+        &:last-child {
+          margin-left: 20px;
+          padding: 0;
+          > .pButton {
+            border-width: 1.5px;
+            width: 123px;
+            height: 40px;
+            font-size: 14.4px;
+            font-weight: 300;
+          }
+        }
+        &.active,
+        &:hover {
+          color: #515151;
+        }
+      }
+    }
+  }
+}

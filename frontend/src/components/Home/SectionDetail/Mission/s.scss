@@ -1,0 +1,84 @@
+@media (max-width: 576px) {
+  .detail2 {
+    padding: 2.5641rem 0 2.0513rem 0;
+    .contentWidth {
+      // @include fcss;
+      flex-direction: column-reverse;
+      .leftWrapper {
+        width: 8.9744rem;
+        .imgWrapper {
+          padding: 1.0256rem 0 2.0513rem 0;
+          &:last-child {
+            padding-bottom: 0;
+          }
+        }
+      }
+      .rightWrpper {
+        top: $headerHeightS;
+        width: 8.9744rem;
+        .textCon {
+          @include fcsc;
+          margin: 0;
+          width: 100%;
+          height: auto;
+          // @include fcbs;
+          main {
+            h3 {
+              margin-top: 0;
+              line-height: 120%;
+              letter-spacing: -0.0046rem;
+              @include fcsc;
+              > p {
+                .strongTit {
+                  // width: 2.9487rem;
+                  height: 1.1282rem;
+                  line-height: 1.1282rem;
+                  border-radius: 0.0984rem;
+                  border: 0.0164rem solid var(--dark-blue, #0c1719);
+                  background: var(
+                    --gradient,
+                    linear-gradient(180deg, #34dbff 51.36%, #c6ffe5 100%)
+                  );
+                  font-size: 0.9231rem;
+                  letter-spacing: -0.0046rem;
+                  padding: 1PX .1795rem;
+                  margin-left: .2308rem;
+                }
+                &:last-child {
+                  width: auto;
+                }
+              }
+            }
+          }
+
+          .detailCon {
+            width: 100%;
+            padding-top: 0.6154rem !important;
+            @include fcsc;
+            align-items: center !important;
+            h6 {
+              text-align: center;
+              font-size: 0.5128rem;
+              line-height: 110%;
+              letter-spacing: -0.1px;
+            }
+            p {
+              text-align: center;
+              padding-top: 0.4103rem;
+              font-size: 0.4103rem;
+              line-height: 130%;
+            }
+            .pButton {
+              margin-top: 0.6154rem;
+              width: 3.5897rem;
+              height: 0.9231rem;
+              height: 36px;
+              border-radius: 0.0513rem;
+              border: 0.0128rem solid $colBtnBorder;
+            }
+          }
+        }
+      }
+    }
+  }
+}

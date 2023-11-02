@@ -1,0 +1,19 @@
+.pTag {
+  padding: 4px 8px;
+  @include frsc;
+
+  // color: var(--PADO-sky-blue-600, #2AAFCC);
+  color: #2aafcc;
+
+  /* PADO Desktop/Body 2 */
+  font-family: Overpass;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 140%; /* 25.2px */
+
+  border-radius: 4px;
+  background: rgba(52, 219, 255, 0.1);
+
+  width: fit-content;
+}

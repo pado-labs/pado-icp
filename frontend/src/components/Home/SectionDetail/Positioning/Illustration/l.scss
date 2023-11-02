@@ -1,0 +1,123 @@
+@media (max-width: 1439px) {
+  .illustrationWrapperPosition {
+    width: 4.375rem;
+    height: 3.6736rem;
+    .am {
+      width: 3.6676rem;
+      height: 3.6676rem;
+      .border {
+        &.border7 {
+          > img {
+            width: 2.0347rem;
+            height: 2.0347rem;
+          }
+        }
+      }
+
+      .layer2 {
+        .circle1 {
+          .iconPolygon {
+            width: 0.3324rem;
+            height: 0.3324rem;
+            left: 0.6764rem;
+            top: 0.1341rem;
+          }
+        }
+        .circle2 {
+          > .iconZan {
+            width: 0.309rem;
+            height: 0.3149rem;
+            top: 0.4447rem;
+            left: 2.8511rem;
+          }
+        }
+        .circle3 {
+          .iconICP {
+            width: 0.309rem;
+            left: 0.31125rem;
+            top: 0.3276rem;
+          }
+        }
+
+        .circle4 {
+          > img {
+            width: 0.3382rem;
+            height: 0.3382rem;
+          }
+          .iconEas {
+            left: 1.479rem;
+            top: -0.1626rem;
+          }
+        }
+        .circle6 {
+          > .card {
+            width: 0.8104rem;
+            height: 0.8104rem;
+            left: 1.6782rem;
+            top: 0.1961rem;
+          }
+        }
+      }
+
+      .border2,
+      .circle2 {
+        width: 3.3951rem;
+        height: 3.3951rem;
+      }
+      .border3,
+      .circle3 {
+        width: 3.1225rem;
+        height: 3.1225rem;
+      }
+      .border4,
+      .circle4 {
+        width: 2.8578rem;
+        height: 2.8578rem;
+      }
+      .border5,
+      .circle5 {
+        width: 2.5775rem;
+        height: 2.5775rem;
+      }
+      .border6,
+      .circle6 {
+        width: 2.3127rem;
+        height: 2.3127rem;
+      }
+      .layer3 {
+        .circle2 {
+          .lBall {
+            width: 0.1982rem;
+            height: 0.1982rem;
+            left: 1.131rem;
+            top: 0.0074rem;
+          }
+        }
+        .circle4 {
+          .iconBnb {
+            width: 0.3382rem;
+            height: 0.3382rem;
+            // left: -0.0667rem;
+            // top: 0.9278rem;
+            left: -0.0667rem;
+            top: 0.9277rem;
+          }
+        }
+        .circle5 {
+          .mBall {
+            width: 0.1341rem;
+            height: 0.1341rem;
+            left: 1.6765rem;
+            top: 0.0177rem;
+          }
+          .sBall {
+            width: 0.0816rem;
+            height: 0.0816rem;
+            left: 0.0028rem;
+            top: 1.5629rem;
+          }
+        }
+      }
+    }
+  }
+}

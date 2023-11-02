@@ -1,0 +1,24 @@
+<svg width="350" height="202" viewBox="0 0 350 203" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="26.9231" cy="27.4622" r="26.5231" stroke="#0A1214" stroke-width="0.8" />
+  <circle cx="323.077" cy="27.4622" r="26.5231" stroke="#0A1214" stroke-width="0.8" />
+  <circle cx="26.9231" cy="101.501" r="26.5231" stroke="#0A1214" stroke-width="0.8" />
+  <circle cx="323.077" cy="101.501" r="26.5231" stroke="#0A1214" stroke-width="0.8" />
+  <circle cx="26.9231" cy="175.54" r="26.5231" stroke="#0A1214" stroke-width="0.8" />
+  <circle cx="323.077" cy="175.54" r="26.5231" stroke="#0A1214" stroke-width="0.8" />
+  <circle cx="175" cy="101.501" r="78.077" stroke="#0A1214" stroke-opacity="0.2" stroke-width="0.8"
+    stroke-linecap="round" stroke-dasharray="0.1 3" />
+  <circle cx="175" cy="27.4622" r="26.5231" fill="" stroke="#0A1214" stroke-width="0.8" />
+  
+  <circle cx="175" cy="101.501" r="26.5231" fill="url(#paint0_radial_187_6827)" stroke="#0A1214" stroke-width="0.8" />
+  
+  <circle cx="175" cy="175.54" r="26.5231" fill="" stroke="#0A1214" stroke-width="0.8" />
+  
+  <circle cx="100.962" cy="27.4622" r="26.5231" stroke="#0A1214" stroke-width="0.8" />
+  <circle cx="249.038" cy="27.4622" r="26.5231" stroke="#0A1214" stroke-width="0.8" />
+  <circle cx="100.962" cy="175.54" r="26.5231" stroke="#0A1214" stroke-width="0.8" />
+  <circle cx="249.038" cy="175.54" r="26.5231" stroke="#0A1214" stroke-width="0.8" />
+  <circle cx="249.038" cy="101.501" r="26.5231" fill="" stroke="#0A1214" stroke-width="0.8" />
+  
+  <circle cx="100.962" cy="101.501" r="26.5231" fill="" stroke="#0A1214" stroke-width="0.8" />
+  
+</svg>
