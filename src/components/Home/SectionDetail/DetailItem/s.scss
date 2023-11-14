@@ -1,0 +1,26 @@
+@media (max-width: 576px) {
+  .detail1,
+  .detail2,
+  .detail3 {
+    .contentWid {
+      @include fcbc;
+      gap: 1.0256rem;
+    }
+    .textCon {
+      width: 100%;
+      height: auto;
+      > main {
+        @include fcsc;
+      }
+      h3 {
+        padding-top: 0.4103rem;
+        font-size: 0.9231rem;
+        letter-spacing: -0.0046rem;
+        text-transform: capitalize;
+      }
+      .detailCon {
+        padding-top: 0.6154rem;
+      }
+    }
+  }
+}

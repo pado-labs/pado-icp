@@ -1,0 +1,45 @@
+@media (max-width:1439PX) {
+  .sectionTechAchievements {
+    padding: .8333rem 0 .5556rem 0;
+    background-position: 3.8611rem center;
+    .left {
+      gap: 1.1507rem;
+      > h2 {
+        width: 4.375rem;
+        font-size: .4063rem;
+      }
+      > img {
+        width: 2rem;
+      }
+    }
+    .right {
+      > p {
+        width: 3.6181rem;
+        font-size: .125rem;
+      }
+      .datas {
+        padding: .4583rem 0 .3125rem 0;
+        gap: .3333rem;
+        .data {
+          .keyword {
+            font-size: .1rem;
+          }
+          .num {
+            padding: .0556rem 0 .0278rem 0;
+            font-size: .625rem;
+          }
+          .desc {
+            font-size: .125rem;
+          }
+        }
+      }
+      .pButton {
+        width: 1.1111rem;
+        height: .3333rem;
+        border-radius: .0278rem;
+        border: .0069rem solid var(--solitude, #f8f9fa);
+        font-size: .125rem;
+      }
+    }
+  }
+}

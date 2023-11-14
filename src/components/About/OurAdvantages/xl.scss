@@ -1,0 +1,63 @@
+.ourAdvantages {
+  padding: 0 0 120px 0;
+  @include fcsc;
+  gap: 80px;
+  > h2 {
+    color: var(--black-pearl, #0a1214);
+    text-align: center;
+    font-family: Overpass;
+    font-size: 58.5px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 110%; /* 64.35px */
+    letter-spacing: -0.292px;
+  }
+  .advantages {
+    @include frss;
+    width: 100%;
+    gap: 21px;
+
+    .advantage {
+      @include fcss;
+      box-sizing: border-box;
+      width: 413px;
+      height: 275px;
+      padding: 0px 16px 32px 16px;
+
+      .headerIcon {
+        width: 64px;
+      }
+      .descWrapper {
+        @include fcss;
+        > h5 {
+          color: var(--black-pearl, #0a1214);
+
+          /* Pado Desktop/H3 */
+          font-family: Overpass;
+          font-size: 31.5px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 130%; /* 40.95px */
+          padding-top: 32px;
+        }
+        .desc1,
+        .desc2 {
+          color: var(--dark-text, #5b5b5b);
+          font-family: Overpass;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 300;
+          line-height: 140%; /* 25.2px */
+          text-align: left;
+        }
+        .desc1 {
+          padding-top: 8px;
+          letter-spacing: -0.24px;
+        }
+        .desc2 {
+          padding-top: 12px;
+        }
+      }
+    }
+  }
+}

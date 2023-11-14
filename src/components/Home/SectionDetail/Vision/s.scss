@@ -1,0 +1,21 @@
+@media (max-width: 576px) {
+  .detail1 {
+    padding: 2.0513rem 0 0 0;
+    .textCon {
+      width: 100%;
+      > ul {
+        gap: 0.2051rem;
+        > li {
+          gap: 0.2051rem;
+          > img {
+            width: 0.359rem;
+          }
+          > span {
+            font-size: 0.4615rem;
+            line-height: 130%;
+          }
+        }
+      }
+    }
+  }
+}

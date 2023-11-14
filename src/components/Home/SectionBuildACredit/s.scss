@@ -1,0 +1,29 @@
+@media (max-width: 576px) {
+  .detail1.detail3.sectionBuildACredit {
+    width: 100vw;
+    height: (531/390) * 100vw;
+    background: url("../../../assets/img/home/buildACreditBgS.svg");
+    .contentWid {
+      height: 100%;
+      @include fccs;
+      .textCon {
+        @include fcss;
+        width: 5.8462rem;
+        h3,p{
+          text-align: left;
+        }
+        .detailCon {
+          width:100%;
+          padding-top: 0.6154rem;
+        }
+        .pButton {
+          margin-top: 0.4103rem;
+          width: 3.5897rem;
+          height: 1.0256rem;
+          font-size: 0.4103rem;
+          line-height: 130%;
+        }
+      }
+    }
+  }
+}

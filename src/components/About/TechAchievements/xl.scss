@@ -1,0 +1,124 @@
+.sectionTechAchievements {
+  background-color: var(--black-pearl, #0a1214);
+  padding: 120px 0 80px 0;
+  background-image: url("../../../assets/img/about/techAchiBg.svg");
+  background-position: 556px center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  .contentWidth {
+    @include frbs;
+  }
+  .left {
+    @include fcss;
+    gap: 165.7px;
+    > h2 {
+      width: 630px;
+      color: var(--solitude, #f8f9fa);
+
+      /* Pado Desktop/H2 */
+      font-family: Overpass;
+      font-size: 58.5px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 110%; /* 64.35px */
+      letter-spacing: -0.292px;
+      text-align: left;
+    }
+    > img {
+      width: 288px;
+    }
+  }
+  .right {
+    @include fcss;
+
+    > p {
+      width: 521px;
+      color: var(--light-text, #bcbfc2);
+
+      /* Pado Desktop/Body 2 */
+      font-family: Overpass;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 140%; /* 25.2px */
+      opacity: 0.6000000238418579;
+      text-align: left;
+    }
+    .datas {
+      padding: 66px 0 45px 0;
+      @include fcss;
+      gap: 48px;
+      .data {
+        .keyword,
+        .num,
+        .desc {
+          text-align: left;
+        }
+        .keyword {
+          color: var(--solitude, #f8f9fa);
+
+          /* Pado Desktop/Body 3 */
+          font-family: Overpass;
+          font-size: 14.4px;
+          font-style: normal;
+          font-weight: 300;
+          line-height: 110%; /* 15.84px */
+        }
+        .num {
+          padding: 8px 0 4px 0;
+          color: var(--solitude, #f8f9fa);
+
+          /* Pado Desktop/H1 */
+          font-family: Overpass;
+          font-size: 90px;
+          font-style: normal;
+          font-weight: 300;
+          line-height: 110%; /* 99px */
+          letter-spacing: -0.45px;
+        }
+        .desc {
+          color: var(--solitude, #f8f9fa);
+          font-family: Overpass;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 140%; /* 25.2px */
+          text-transform: uppercase;
+        }
+      }
+    }
+    .pButton {
+      display: flex;
+      width: 160px;
+      height: 48px;
+      color: #fff;
+      border-radius: 4px;
+      border: 1px solid var(--solitude, #f8f9fa);
+
+      text-align: center;
+
+      /* Pado Desktop/Body 2 */
+      font-family: Overpass;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 140%; /* 25.2px */
+      .suffix {
+        display: none;
+      }
+      &:hover,
+      &:active {
+        color: var(--black-pearl, #0a1214);
+        .suffix {
+          display: flex;
+        }
+      }
+      &:hover {
+        background: #fff;
+      }
+      &:active {
+        background: #f8f9fa;
+      }
+    }
+  }
+}

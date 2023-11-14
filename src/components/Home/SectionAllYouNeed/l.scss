@@ -1,0 +1,80 @@
+@media (max-width:1439PX) {
+  .sectionAllYouNeed {
+    .sectionContent {
+      gap: 1.1111rem;
+      .sectionContentT {
+        gap: .4444rem;
+        padding: .8333rem 0;
+        .bannerTitle {
+          width: 5.8889rem;
+          font-size: .4063rem;
+        }
+        .downloadBtnWrapper {
+          .tip {
+            bottom: -0.1042rem;
+            right: -0.2083rem;
+            font-size: .0833rem;
+            padding: .0347rem;
+          }
+          
+          .pButton {
+            width: 1.6667rem;
+            height: .3333rem;
+            font-size: .125rem;
+          }
+        }
+        .downloadItems {
+          gap: .3611rem;
+          .downloadItem {
+            gap: .0556rem;
+            >svg{
+              width: .2778rem;
+              height: .2778rem;
+            }
+            > p {
+              font-size: .125rem;
+            }
+            .qrcodeFloat {
+              top: -1.2083rem;
+              border-radius: .0556rem;
+              box-shadow: 0rem 0rem .1389rem 0rem rgba(0, 0, 0, 0.5);
+              backdrop-filter: blur(.1042rem);
+              padding: .0556rem;
+              gap: .0556rem;
+              > p {
+                font-size: .1rem;
+                
+              }
+            }
+            .tip{
+              bottom: -0.1389rem;
+              right: -0.2083rem;
+              font-size: .0833rem;
+              padding: .0347rem;
+              border-radius: .0139rem;
+            }
+
+          }
+        }
+
+        .descItems {
+          li {
+            width: 2.8681rem;
+            height: 2.9583rem;
+            padding: .2778rem .1667rem 0;
+            border-radius: .0833rem;
+            
+            h6 {
+              padding-top: .2778rem;
+              font-size: .1563rem;
+            }
+            p {
+              padding-top: .0556rem;
+              font-size: .125rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

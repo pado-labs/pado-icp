@@ -1,0 +1,115 @@
+@media (max-width: 576px) {
+  .investorsAPartners {
+    padding: 1.5385rem 0;
+    gap: 1.5385rem;
+    .contentWidth {
+      gap: 0.6154rem;
+      &:last-child {
+        gap: 0.6154rem;
+      }
+    }
+    .title {
+      @include fcsc;
+      gap: 2px;
+      h2 {
+        font-size: 0.9231rem;
+        letter-spacing: -0.18px;
+      }
+      h3 {
+        font-size: 0.4103rem;
+        line-height: 130%;
+        opacity: 0.6;
+      }
+    }
+    .investors {
+      width: 8rem;
+      @include frcc;
+      // column-gap: 0.9231rem;
+      row-gap: 0.4103rem;
+      flex-wrap: wrap;
+      .investor {
+        .investorIcon {
+          opacity: 1;
+        }
+        &:first-child {
+          .investorIcon {
+            width: 3.3626rem;
+          }
+        }
+        &:nth-child(2) {
+          .investorIcon {
+            width: 3.7372rem;
+          }
+        }
+        &:nth-child(3) {
+          .investorIcon {
+            width: 3.2103rem;
+          }
+        }
+        &:nth-child(4) {
+          .investorIcon {
+            width: 3.3259rem;
+          }
+        }
+      }
+    }
+
+    .partners {
+      width: 8.8974rem;
+      @include frcc;
+      column-gap: 0.2051rem;
+      row-gap: 0.7179rem;
+      flex-wrap: wrap;
+      .partner {
+        .investorIcon {
+          opacity: 1;
+        }
+        &:first-child {
+          .investorIcon {
+            width: 2.4872rem;
+          }
+        }
+        &:nth-child(2) {
+          .investorIcon {
+            width: 2.2995rem;
+          }
+        }
+        &:nth-child(3) {
+          .investorIcon {
+            width: 2.3646rem;
+          }
+        }
+        &:nth-child(4) {
+          .investorIcon {
+            width: 2.4441rem;
+          }
+        }
+        &:nth-child(5) {
+          .investorIcon {
+            width: 2.9254rem;
+          }
+        }
+        &:nth-child(6) {
+          .investorIcon {
+            width: 2.2118rem;
+          }
+        }
+        &:nth-child(7) {
+          .investorIcon {
+            width: 3.1365rem;
+          }
+        }
+        &:nth-child(8) {
+          .investorIcon {
+            width: 2.7679rem;
+          }
+        }
+        &:nth-child(9) {
+          .investorIcon {
+            width: 2.5108rem;
+          }
+        }
+      }
+    }
+  }
+}

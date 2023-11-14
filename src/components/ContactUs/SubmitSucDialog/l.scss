@@ -1,0 +1,29 @@
+@media (max-width:1439PX) {
+  .submitSucDialog {
+    gap: .1667rem;
+    width: 3.1528rem;
+    height: 2.1319rem;
+    padding-top: .4444rem;
+    border-radius: .0694rem;
+    box-shadow: 0rem .1111rem .1389rem 0rem rgba(0, 0, 0, 0.1);
+    .iconClose {
+      top: .1111rem;
+      right: .1111rem;
+      width: .1667rem;
+      height: .1667rem;
+    }
+    .iconSuc {
+      width: .5417rem;
+    }
+    .desc {
+      width: 2.4028rem;
+      gap: .1111rem;
+      > h3 {
+        font-size: .1563rem;
+      }
+      > p {
+        font-size: .125rem;
+      }
+    }
+  }
+}

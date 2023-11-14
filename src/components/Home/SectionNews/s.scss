@@ -1,0 +1,22 @@
+@media (max-width: 576px) {
+  .sectionNews {
+    // width: 100%;
+    // @include fccs;
+    padding: 2.0513rem 0;
+    gap: 1.0256rem;
+    .sectionContentT {
+      width: 100%;
+      @include fcss;
+      gap: 0.2564rem;
+      h3 {
+        font-size: .9231rem;
+        letter-spacing: -0.0046rem;
+      }
+    }
+    .sectionContentC {
+      // width: calc(100vw - (100vw - 1280px) / 2);
+      width: 9.4872rem;
+      overflow: hidden;
+    }
+  }
+}

@@ -1,0 +1,10 @@
+@media (max-width: 576px) {
+  .pInputWithLabelWrapper {
+    @include fcss;
+    gap: 0.1026rem;
+    > label {
+      font-size: 0.4103rem;
+      line-height: 130%;
+    }
+  }
+}

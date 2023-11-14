@@ -1,0 +1,90 @@
+@media (max-width: 576PX) {
+  .pageProductTrial {
+    margin-top: -1 * $headerHeightS;
+    padding-top: $headerHeightS;
+    .pageProductTrialCon {
+      @include fcsc;
+      padding: 2.1026rem 0 2.5641rem 0;
+      gap: 3.5897rem;
+      .titleWrapper {
+        padding-top: 0;
+        width: 100%;
+        @include fcsc;
+        > h1 {
+          font-size: 1.4359rem;
+          line-height: 110%; /* 99px */
+          letter-spacing: -0.0072rem;
+          text-align: center;
+        }
+        > p {
+          width: 100%;
+          padding-top: 0.6154rem;
+          font-size: 0.4103rem;
+          line-height: 130%; /* 25.2px */
+          text-align: center;
+          text-align: center;
+        }
+        .btnWrapper {
+          margin-top: 1.2308rem;
+          .pButton {
+            width: 6.1538rem;
+            height: 1.2308rem;
+            font-size: .4103rem;
+            .suffix {
+              width: .4615rem;
+            }
+            
+
+            &:last-child {
+              margin-top: .8205rem;
+            }
+          }
+        }
+      }
+      .conWrapper {
+        padding: 0.6154rem 0.4103rem;
+        width: 100%;
+        height: auto;
+        // background-color: $colWhite;
+        border-radius: 0.2051rem;
+        @include fcsc;
+        .userForm {
+          // width: 100%;
+          // @include fcss;
+          gap: 0.4103rem;
+          .pRow {
+            // width: 100%;
+            @include fcss;
+            gap: 0.4103rem;
+            .formItem {
+              width: 100%;
+              flex-basis: auto;
+              // 0.1026rem;
+            }
+          }
+        }
+        .tip,
+        .agree {
+          font-size: 0.3077rem;
+          line-height: 130%;
+        }
+        .tip {
+          padding-top: 0.5128rem;
+        }
+        .agree {
+          padding-top: 0.3846rem;
+          // flex: 1;
+          // @include frss;
+          gap: 0.1026rem;
+        }
+        .pButton {
+          height: 1.2821rem;
+          margin-top: 0.4103rem;
+          border-radius: 2px;
+          font-size: 0.3077rem;
+          line-height: 130%;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+@media (max-width: 576px) {
+  @keyframes maskS {
+    0%{
+      // -webkit-mask-size: 53.846px 53.846px;
+      // -webkit-mask-position: 74.03621px 74.03621px;
+      -webkit-mask-size: 1.3807rem 1.3807rem;
+      -webkit-mask-position: 1.8984rem 1.8984rem;
+    }
+    25% {
+      // -webkit-mask-size: 53.846px 53.846px;
+      // -webkit-mask-position: 148.072px 74.036px;
+      -webkit-mask-size: 1.3807rem 1.3807rem;
+      -webkit-mask-position: 3.7967rem 1.8984rem;
+    }
+    50% {
+      -webkit-mask-size: 3.279rem 3.279rem;
+      -webkit-mask-position: 1.8984rem 0;
+    }
+    75% {
+      // -webkit-mask-size: 127.881999px 127.881999px;
+      -webkit-mask-size: 3.279rem 3.279rem;
+      -webkit-mask-position: 3.7967rem 0;
+    }
+    100% {
+      -webkit-mask-size: 5.1774rem 5.1774rem;
+      -webkit-mask-position: 1.8984rem 0;
+    }
+  }
+  .versionIllustrationWrapper {
+    width: 8.9744rem;
+    height: 6.2821rem;
+    .bg,
+    .visionIllustrationCore {
+      width: 8.9744rem;
+      height: 5.1795rem;
+    }
+    
+    .visionIllustrationCore {
+      background-image: url(../../../../../assets/img/home/detailVisionS.svg);
+      animation: maskS 3s linear infinite forwards;
+    }
+  }
+}

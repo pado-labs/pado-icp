@@ -1,0 +1,42 @@
+@media (max-width: 1439PX) {
+  @keyframes mask {
+    0% {
+      -webkit-mask-size: .5139rem .5139rem;
+      -webkit-mask-position: .7066rem 1.4132rem;
+    }
+    25% {
+      -webkit-mask-size: .5139rem .5139rem;
+      -webkit-mask-position: 1.4132rem 1.4132rem;
+    }
+    50% {
+      -webkit-mask-size: 1.2188rem 1.2188rem;
+      -webkit-mask-position: .7066rem .7066rem;
+    }
+    75% {
+      -webkit-mask-size: 1.2188rem 1.2188rem;
+      -webkit-mask-position: 1.4132rem .7066rem;
+    }
+    100% {
+      -webkit-mask-size: 1.9271rem 1.9271rem;
+      -webkit-mask-position: .7066rem .7066rem;
+    }
+  }
+
+  .versionIllustrationWrapper {
+    width: 4.375rem;
+    height: 3.6736rem;
+    
+    .bg{
+      width: 3.3403rem;
+      height: 3.3403rem;
+    }
+    .visionIllustrationCore {
+      width: 3.3403rem;
+      height: 3.3403rem;
+      animation: mask 3s linear infinite forwards;
+    }
+  }
+}
+
+
+

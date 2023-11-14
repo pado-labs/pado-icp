@@ -1,0 +1,90 @@
+@media (max-width: 576px) {
+  .sectionAllYouNeed {
+    .sectionContent {
+      @include fcsc;
+      gap: 2.5641rem;
+      padding: 2.0513rem 0;
+      .sectionContentT {
+        gap: 0.6154rem;
+        padding: 0;
+        .bannerTitle {
+          width: 100%;
+          // color: var(--solitude, #F8F9FA);
+          color: #f8f9fa;
+          font-size: 0.9231rem;
+          letter-spacing: -0.0046rem;
+        }
+        // .downloadBtnWrapper {
+        //   .pButton {
+        //     height: 1.0256rem;
+        //     font-size: 0.4103rem;
+        //     line-height: 130%;
+        //   }
+        // }
+        .downloadItems {
+          @include frsc;
+          column-gap: 1.4359rem;
+          row-gap: 1.0256rem;
+          padding: 0;
+          width:6rem;
+          flex-wrap: wrap;
+          .downloadItem {
+            width: 2.2821rem;
+            letter-spacing: -0.24px;
+            >svg{
+              width: 1.0256rem;
+              height: 1.0256rem;
+            }
+            > p {
+              font-size: .4103rem;
+              line-height: 130%; /* 25.2px */
+            }
+            .qrcodeFloat {
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%,-50%);
+              > p {
+                font-size: .3077rem;
+                line-height: 130%; /* 15.84px */
+                
+              }
+            }
+          }
+        }
+        .descItems {
+          padding-top: 0.4103rem;
+          @include fcsc;
+          gap: 0.4103rem;
+          li {
+            @include fcsc;
+            width: 8.9744rem;
+            height: 9.0256rem;
+            padding: 0.6154rem 0.6154rem 0;
+            border-radius: 0.2564rem;
+
+            background: linear-gradient(0deg, #141b1d 0%, #141b1d 100%),
+              rgba(255, 255, 255, 0.04);
+            img {
+              width: 100%;
+            }
+            h6 {
+              padding-top: 0.6154rem;
+              font-size: 0.5128rem;
+              line-height: 110%;
+              letter-spacing: -0.1px;
+            }
+            p {
+              padding-top: 0.4103rem;
+
+              // font-size: 0.3841rem; //TODO 16PX
+              font-size: 0.4102rem;
+              // letter-spacing: -0.5px;
+              line-height: 130%;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}

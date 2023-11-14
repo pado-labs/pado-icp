@@ -1,0 +1,54 @@
+@media (max-width: 576px) {
+  .sectionBanner.aboutSectionBanner {
+    height: 100vw * 852/390;
+    background-image: url("../../../assets/img/about/bannerBgS.png");
+    // margin-top: 4.9744rem;
+    padding-top: 5.0256rem;
+    justify-content: flex-start;
+    .sectionContent {
+      padding-top: 0;
+      .bannerTitle {
+        width: 8.8462rem;
+      }
+      .bannerBtn {
+        // cursor: pointer;
+        width: 6.1538rem;
+        height: 1.2308rem;
+        box-sizing: border-box;
+        border-radius: 0.1026rem;
+        // border: 1px solid var(--black-pearl, #0a1214);
+        // @include frbc;
+        padding: 3px 0 3px 3px;
+
+        .iconBannerBtnImg {
+          width: 3.7692rem;
+        }
+        .btnText {
+          font-size: 0.4103rem;
+          line-height: 100%;
+        }
+        .iconVideoPlay {
+          display: none;
+        }
+      }
+      .pButton {
+        text-align: center;
+        /* PADO Desktop/Body 2 */
+        font-family: Overpass;
+        font-style: normal;
+        font-weight: 300;
+        color: $colBtnBorder;
+        font-size: 0.4615rem;
+        line-height: 140%; /* 25.2px */
+        width: 6.4103rem;
+        height: 1.641rem;
+        &:hover {
+          color: #fff;
+        }
+      }
+    }
+    .pMask {
+      background-color: transparent;
+    }
+  }
+}

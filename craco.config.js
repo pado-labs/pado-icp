@@ -5,11 +5,11 @@ module.exports = {
   webpack: {
     port: 3001,
     alias: {
-      "@": path.resolve(__dirname, "frontend", "src/"),
-      "@com": path.resolve(__dirname, "frontend", "src", "components"),
-      "@ass": path.resolve(__dirname, "frontend", "src", "assets"),
-      "@css": path.resolve(__dirname, "frontend", "src", "assets", "css"),
-      "@img": path.resolve(__dirname, "frontend", "src", "assets", "img"),
+      "@": path.resolve(__dirname, "src/"),
+      "@com": path.resolve(__dirname, "src", "components"),
+      "@ass": path.resolve(__dirname, "src", "assets"),
+      "@css": path.resolve(__dirname, "src", "assets", "css"),
+      "@img": path.resolve(__dirname, "src", "assets", "img"),
     },
   },
   plugins: [

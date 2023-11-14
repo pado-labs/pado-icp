@@ -1,0 +1,28 @@
+.detail1 {
+  padding: 120px 0 0 0;
+  .textCon {
+    width: 630px;
+    > ul {
+      @include fcss;
+      gap: 16px;
+
+      > li {
+        @include frsc;
+        gap: 12px;
+        > img {
+          width: 23px;
+        }
+        > span {
+          color: $colLBlack;
+          text-align: justify;
+          font-family: Overpass;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 300;
+          line-height: 140%;
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}

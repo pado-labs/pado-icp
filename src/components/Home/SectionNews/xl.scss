@@ -1,0 +1,26 @@
+.sectionNews {
+  width: 100%;
+  @include fccs;
+  padding: 120px 0;
+  gap: 60px;
+  // height: 1452px;
+  .sectionContentT {
+    width: 100%;
+    @include fcss;
+    gap: 18px;
+    h3 {
+      color: $colBtnBorder;
+      font-family: Overpass;
+      font-size: 58.5px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 110%; /* 64.35px */
+      letter-spacing: -0.292px;
+      text-transform: capitalize;
+    }
+  }
+  .sectionContentC {
+    // width: calc(100vw - (100vw - 1280px) / 2);
+    width: 1360px;
+  }
+}
