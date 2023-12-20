@@ -20,6 +20,24 @@ module.exports = {
       },
     },
   ],
+  devServer: {
+    proxy: {
+      "/padoapi": {
+        target: "http://18.179.8.186:8080",
+        changeOrigin: true,
+        pathRewrite: {
+          "^/padoapi": "",
+        },
+      },
+      "/api": {
+        target: "http://127.0.0.1:4943",
+        changeOrigin: true,
+        pathRewrite: {
+          "^/api": "/api",
+        },
+      },
+    },
+  },
   // style: {
   //   postcss: {
   //     mode: "extends",

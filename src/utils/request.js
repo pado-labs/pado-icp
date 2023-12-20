@@ -1,7 +1,6 @@
 import axios from "axios";
 const service = axios.create({
-  baseURL: process.env.REACT_APP_BASEAPI, // TODO
-  // baseURL: "/",
+  baseURL: process.env.REACT_APP_BASEAPI,
   withCredentials: false, // send cookies when cross-domain requests
   timeout: 50000, // request timeout
 });
