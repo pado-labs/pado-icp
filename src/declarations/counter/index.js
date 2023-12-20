@@ -5,7 +5,8 @@ import { idlFactory } from "./counter.did.js";
 export { idlFactory } from "./counter.did.js";
 
 // CANISTER_ID is replaced by webpack based on node environment
-export const canisterId = process.env.COUNTER_CANISTER_ID;
+// export const canisterId = process.env.COUNTER_CANISTER_ID;
+export const canisterId = "b5mke-zyaaa-aaaam-abyla-cai";
 
 export const createActor = (canisterId, options = {}) => {
   const agent = options.agent || new HttpAgent({ ...options.agentOptions });
@@ -17,14 +18,15 @@ export const createActor = (canisterId, options = {}) => {
   }
 
   // Fetch root key for certificate validation during development
-  if (process.env.DFX_NETWORK !== "ic") {
-    agent.fetchRootKey().catch((err) => {
-      console.warn(
-        "Unable to fetch root key. Check to ensure that your local replica is running"
-      );
-      console.error(err);
-    });
-  }
+  // if (process.env.DFX_NETWORK !== "ic") {
+  // if ('ic' !== "ic") {
+  //   agent.fetchRootKey().catch((err) => {
+  //     console.warn(
+  //       "Unable to fetch root key. Check to ensure that your local replica is running"
+  //     );
+  //     console.error(err);
+  //   });
+  // }
 
   // Creates an actor with using the candid interface and the HttpAgent
   return Actor.createActor(idlFactory, {
