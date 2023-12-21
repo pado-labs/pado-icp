@@ -4,9 +4,14 @@ import { Actor, HttpAgent } from "@dfinity/agent";
 import { idlFactory } from "./counter.did.js";
 export { idlFactory } from "./counter.did.js";
 
-// CANISTER_ID is replaced by webpack based on node environment
-// export const canisterId = process.env.COUNTER_CANISTER_ID;
-export const canisterId = "b5mke-zyaaa-aaaam-abyla-cai";
+/* CANISTER_ID is replaced by webpack based on node environment
+ * Note: canister environment variable will be standardized as
+ * process.env.CANISTER_ID_<CANISTER_NAME_UPPERCASE>
+ * beginning in dfx 0.15.0
+ */
+export const canisterId = "bd3sg-teaaa-aaaaa-qaaba-cai";
+  //process.env.CANISTER_ID_COUNTER ||
+  //process.env.COUNTER_CANISTER_ID;
 
 export const createActor = (canisterId, options = {}) => {
   const agent = options.agent || new HttpAgent({ ...options.agentOptions });
@@ -18,15 +23,15 @@ export const createActor = (canisterId, options = {}) => {
   }
 
   // Fetch root key for certificate validation during development
-  // if (process.env.DFX_NETWORK !== "ic") {
-  // if ('ic' !== "ic") {
-  //   agent.fetchRootKey().catch((err) => {
-  //     console.warn(
-  //       "Unable to fetch root key. Check to ensure that your local replica is running"
-  //     );
-  //     console.error(err);
-  //   });
-  // }
+  if ("local" !== "ic") {
+    console.log("******** fetch root key");
+    agent.fetchRootKey().catch((err) => {
+      console.warn(
+        "Unable to fetch root key. Check to ensure that your local replica is running"
+      );
+      console.error(err);
+    });
+  }
 
   // Creates an actor with using the candid interface and the HttpAgent
   return Actor.createActor(idlFactory, {

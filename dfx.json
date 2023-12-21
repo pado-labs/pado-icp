@@ -34,5 +34,6 @@
       "type": "persistent"
     }
   },
-  "version": 1
+  "version": 1,
+  "dfx": "0.15.0"
 }

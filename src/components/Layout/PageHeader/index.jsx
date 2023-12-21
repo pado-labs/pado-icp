@@ -66,10 +66,11 @@ const PageHeader = () => {
     // const balance = await window.ic?.plug?.requestBalance();
     // console.log("2221234567", balance);
     // await connectWalletFn()
+    console.log("************************* before start");
     const v = await counter.getValue();
     const greeting = await counter.increment();
     const newV = await counter.getValue();
-    console.log("2221,v,", v, greeting, newV);
+    console.log("*********** 2221,v,", v,greeting,newV);
     setIcpAddress2(window.ic.plug.accountId);
   };
   const onClickNav = (navItem) => {
