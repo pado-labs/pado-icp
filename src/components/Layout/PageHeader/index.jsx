@@ -9,7 +9,7 @@ import iconMenu from "@img/home/iconMenu.svg";
 import PButton from "@/components/PButton";
 import "./index.scss";
 
-const navList = [
+let navList = [
   { name: "Techniques", path: "/#allYouNeed" },
   // { name: "About Us", path: "/about" },
   { name: "Docs", path: PADODOCURL },
@@ -18,7 +18,7 @@ const navList = [
   // { name: "Product Trial", path: "/product-trial" },
   { name: "Get Started", path: PADOEXTENSIONDOWNLOADURL },
   { name: "Connect Plug", path: "" },
-  { name: "Connect Pado", path: "" },
+  // { name: "Connect Pado", path: "" },
   { name: "Upper Chain", path: "" },
 ];
 
@@ -42,16 +42,17 @@ const PageHeader = () => {
         `The connected user's principalId is:`,
         window.ic.plug.principalId
       );
-      let balance = [1, 2, 3];
-      try {
-        balance = await window.ic?.plug?.requestBalance();
-      } catch (e) {
-        console.log("fetch balance e", e);
-      }
+      // let balance = [1, 2, 3];
+      // try {
+      //   balance = await window.ic?.plug?.requestBalance();
+      // } catch (e) {
+      //   console.log("fetch balance e", e);
+      // }
       // console.log("2221234567", balance);
       // const balance = [1,2,3]
-      localStorage.setItem("icpBalance", JSON.stringify(balance));
+      // localStorage.setItem("icpBalance", JSON.stringify(balance));
       setIcpAddress(window.ic.plug.principalId);
+      navList[4].name = "Connect Pado";
     } catch (e) {
       console.log(e);
     }
@@ -63,9 +64,6 @@ const PageHeader = () => {
   };
   const upperChainFn = async () => {
     console.log("222");
-    // const balance = await window.ic?.plug?.requestBalance();
-    // console.log("2221234567", balance);
-    // await connectWalletFn()
     console.log("************************* before start");
     const v = await counter.getValue();
     const greeting = await counter.increment();
@@ -81,9 +79,7 @@ const PageHeader = () => {
       setActiveNav(navItem.name);
       if (navItem.name === "Techniques") {
         navigate(navItem.path);
-
         const hashEl = document.getElementById("allYouNeed");
-
         if (hashEl) {
           hashEl.scrollIntoView({
             behavior: "smooth",
@@ -168,32 +164,32 @@ const PageHeader = () => {
         )}
         {breakPoint !== "s" && (
           <ul className="navs">
-            {navList.map((i) => {
+            {navList.map((i,k) => {
               return (
                 <li
                   className={
                     activeNav === i.name ? "navItem active" : "navItem"
                   }
                   id={
-                    i.name === "Connect Pado"
+                    k === 4
                       ? "ConnectPadoNav"
                       : i.name === "Upper Chain"
                       ? "UpperChainNav"
                       : ""
                   }
                   title={
-                    i.name === "Connect Pado"
+                    k === 4
                       ? icpAddress
                       : i.name === "Upper Chain"
                       ? icpAddress2
                       : ""
                   }
-                  key={i.name}
+                  key={k}
                   onClick={() => {
                     onClickNav(i);
                   }}
                 >
-                  {["Get Started", "Connect Plug", "Connect Pado"].includes(
+                  {["Get Started", "Connect Plug", "Connect Pado", 'Upper Chain'].includes(
                     i.name
                   ) ? (
                     <PButton text={i.name}></PButton>
