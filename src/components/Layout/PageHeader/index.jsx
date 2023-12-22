@@ -1,7 +1,8 @@
 import React, { useState, useMemo, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import useBreakPoint from "@/hooks/useBreakPoint";
-import { counter } from "@/declarations/counter";
+import { padoportal } from "@/declarations/padoportal";
+//import { Entry } from "@/declarations/padoportal/padoportal.did";
 import { PADODOCURL, PADOEXTENSIONDOWNLOADURL } from "@/config/constants";
 import logo from "@img/home/logo.svg";
 import iconMenu from "@img/home/iconMenu.svg";
@@ -65,10 +66,13 @@ const PageHeader = () => {
   const upperChainFn = async () => {
     console.log("222");
     console.log("************************* before start");
-    const v = await counter.getValue();
-    const greeting = await counter.increment();
-    const newV = await counter.getValue();
-    console.log("*********** 2221,v,", v,greeting,newV);
+    const v = await padoportal.get("abc");
+    const entry =  {source:"binance", content:"kyc", result:"true"};
+    const res = await padoportal.set("abc", entry);
+    const newv = await padoportal.get("abc");
+    //const greeting = await counter.increment();
+    //const newV = await counter.getValue();
+    console.log("*********** 2221,v,", v, res, newv);
     setIcpAddress2(window.ic.plug.accountId);
   };
   const onClickNav = (navItem) => {
