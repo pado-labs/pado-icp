@@ -64,16 +64,17 @@ const PageHeader = () => {
     }
   };
   const upperChainFn = async () => {
-    console.log("222");
+    const padoUpperChainInfoStr = localStorage.getItem("padoUpperChainInfo");
     console.log("************************* before start");
-    const v = await padoportal.get("abc");
-    const entry =  {source:"binance", content:"kyc", result:"true"};
-    const res = await padoportal.set("abc", entry);
-    const newv = await padoportal.get("abc");
+    const v = await padoportal.get(icpAddress);
+    const entry = JSON.parse(padoUpperChainInfoStr);
+    console.log("upper chain info", entry);
+    const res = await padoportal.set(icpAddress, entry);
+    const newv = await padoportal.get(icpAddress);
     //const greeting = await counter.increment();
     //const newV = await counter.getValue();
     console.log("*********** 2221,v,", v, res, newv);
-    setIcpAddress2(window.ic.plug.accountId);
+    setIcpAddress2(process.env.REACT_APP_CONTRACT_ADDR);
   };
   const onClickNav = (navItem) => {
     const actPath = navItem.path;
