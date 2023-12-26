@@ -25,8 +25,8 @@ npm run build
 ```sh
 dfx start --clean
 ```
-* Now you can deploy the pado-icp canisters locally in another terminal,
-go to your pado-icp directory, and use the command:
+* Now you can deploy the canisters locally in another terminal,
+go to your "/pado-icp" directory, and use the command:
 ```sh
 dfx deploy
 ```
@@ -36,11 +36,12 @@ Note make sure your DFX version is exactly **0.15.0**. Otherwise, you can check 
 
 ### User Operations
 The user workflow is as follows:
-1. By visiting the web page of the front end canister, the user clicks the "connect plug" button to authorize the plug wallet connection.
+0. unzip and enable the PADO extension in the Chrome browser from the above link.
+1. By visiting the web page of the front-end canister, the user clicks the "connect plug" button to authorize the plug wallet connection.
 2. The user clicks the "connect PADO" button, where the PADO extension is enabled on the new page.
 3. The user creates an attestation at the PADO extension. Note the simplest way is to create an identity proof for checking the KYC status in Binance web data, and the user can create arbitrary attestations after he/she connects with various data sources.
 4. Once the attestation is created successfully, a proof card is shown in the "proof" tab of the PADO extension. The user clicks the "up arrow" on the proof card to submit the attestation to IC. After a few seconds, there is a logo of ICP shown on the proof card.
-5. Now you can check the submitted data by visiting the backend canister, and submitting a query at the get function with the plug wallet account ID.
+5. Now you can check the submitted data by visiting the backend canister and submitting a query at the get function with the plug wallet account ID.
 
 ## Milestone 1
 
