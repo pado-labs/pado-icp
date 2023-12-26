@@ -1,7 +1,7 @@
 # pado-icp
 Enable PADO (extension) on Internet Computer
 
-# Milestone 3 
+## Milestone 3 
 
 Under development...
 
