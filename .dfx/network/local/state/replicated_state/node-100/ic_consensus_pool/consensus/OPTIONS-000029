@@ -50,7 +50,7 @@
   fail_if_options_file_error=false
   persist_stats_to_disk=false
   WAL_ttl_seconds=0
-  wal_dir=/Users/yangshenmeng/Documents/bd/pado-icp/.dfx/network/local/state/replicated_state/node-100/ic_consensus_pool/consensus
+  wal_dir=/Users/fksyuan/work/code/pado-labs/pado-icp/.dfx/network/local/state/replicated_state/node-100/ic_consensus_pool/consensus
   keep_log_file_num=1000
   table_cache_numshardbits=6
   max_file_opening_threads=16

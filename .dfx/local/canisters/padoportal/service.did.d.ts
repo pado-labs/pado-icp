@@ -6,7 +6,9 @@ export interface Entry {
   'content' : string,
   'source' : string,
 }
-export interface _SERVICE {
+export interface anon_class_4_1 {
   'get' : ActorMethod<[string], [] | [Entry]>,
-  'set' : ActorMethod<[string, Entry], undefined>,
+  'getInitializer' : ActorMethod<[], Principal>,
+  'set' : ActorMethod<[string, Entry], Principal>,
 }
+export interface _SERVICE extends anon_class_4_1 {}

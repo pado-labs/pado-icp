@@ -1,0 +1,14 @@
+type anon_class_7_1 = 
+ service {
+   createSchema: (Entry) -> (text);
+   getInitializer: () -> (principal) query;
+   getSchema: (text) -> (opt Entry) query;
+ };
+type Entry = 
+ record {
+   context: text;
+   description: text;
+   name: text;
+   schemaString: text;
+ };
+service : () -> anon_class_7_1

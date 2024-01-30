@@ -1,0 +1,21 @@
+type Attestation = record {
+  attestationId : text;
+  attestationPayload : AttestationPayload;
+  attester : text;
+};
+type AttestationPayload = record {
+  signature : text;
+  schema : text;
+  data : vec nat8;
+  revocable : bool;
+  recipient : text;
+  deadline : nat64;
+  expirationTime : nat64;
+  refUID : text;
+};
+type anon_class_10_1 = service {
+  attest : (AttestationPayload, text) -> (text);
+  getAttestation : (text) -> (opt Attestation) query;
+  getInitializer : () -> (principal) query;
+};
+service : anon_class_10_1

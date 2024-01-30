@@ -4,6 +4,14 @@
       "main": "canisters/padoportal/main.mo",
       "type": "motoko"
     },
+    "schemaregistry": {
+      "main": "canisters/schemaregistry/main.mo",
+      "type": "motoko"
+    },
+    "attestationregistry": {
+      "main": "canisters/attestationregistry/main.mo",
+      "type": "motoko"
+    },
     "assets": {
       "dependencies": [
         "padoportal"

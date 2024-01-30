@@ -1,0 +1,24 @@
+type anon_class_10_1 = 
+ service {
+   attest: (AttestationPayload, text) -> (text);
+   getAttestation: (text) -> (opt Attestation) query;
+   getInitializer: () -> (principal) query;
+ };
+type AttestationPayload = 
+ record {
+   data: blob;
+   deadline: nat64;
+   expirationTime: nat64;
+   recipient: text;
+   refUID: text;
+   revocable: bool;
+   schema: text;
+   signature: text;
+ };
+type Attestation = 
+ record {
+   attestationId: text;
+   attestationPayload: AttestationPayload;
+   attester: text;
+ };
+service : () -> anon_class_10_1

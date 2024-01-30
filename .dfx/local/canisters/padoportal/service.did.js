@@ -4,9 +4,11 @@ export const idlFactory = ({ IDL }) => {
     'content' : IDL.Text,
     'source' : IDL.Text,
   });
-  return IDL.Service({
+  const anon_class_4_1 = IDL.Service({
     'get' : IDL.Func([IDL.Text], [IDL.Opt(Entry)], ['query']),
-    'set' : IDL.Func([IDL.Text, Entry], [], []),
+    'getInitializer' : IDL.Func([], [IDL.Principal], ['query']),
+    'set' : IDL.Func([IDL.Text, Entry], [IDL.Principal], []),
   });
+  return anon_class_4_1;
 };
 export const init = ({ IDL }) => { return []; };

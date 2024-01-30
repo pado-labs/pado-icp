@@ -5,7 +5,16 @@
   "assets": {
     "local": "bkyz2-fmaaa-aaaaa-qaaaq-cai"
   },
+  "attestationregistry": {
+    "local": "b77ix-eeaaa-aaaaa-qaada-cai"
+  },
   "padoportal": {
     "local": "bd3sg-teaaa-aaaaa-qaaba-cai"
+  },
+  "schema": {
+    "local": "br5f7-7uaaa-aaaaa-qaaca-cai"
+  },
+  "schemaregistry": {
+    "local": "bw4dl-smaaa-aaaaa-qaacq-cai"
   }
 }
