@@ -14,7 +14,9 @@
     },
     "assets": {
       "dependencies": [
-        "padoportal"
+        "padoportal",
+        "attestationregistry",
+        "schemaregistry"
       ],
       "frontend": {
         "entrypoint": "build/index.html"

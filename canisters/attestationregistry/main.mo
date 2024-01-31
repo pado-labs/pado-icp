@@ -5,6 +5,7 @@ import Nat "mo:base/Nat";
 import Nat64 "mo:base/Nat64";
 import Blob "mo:base/Blob";
 import Principal "mo:base/Principal";
+import Iter "mo:base/Iter";
 import Error "mo:base/Error";
 
 shared({ caller = initializer }) actor class() {
@@ -25,7 +26,7 @@ shared({ caller = initializer }) actor class() {
         attestationPayload: AttestationPayload;
     };
     
-    stable var attestationIdCounter = 0;
+    var attestationIdCounter = 0;
 
     let attestations = Map.HashMap<Text, Attestation>(0, Text.equal, Text.hash);
 
@@ -49,6 +50,10 @@ shared({ caller = initializer }) actor class() {
 
     public query func getAttestation(attestationId : Text) : async ?Attestation {
         return attestations.get(attestationId);
+    };
+
+    public query func getAttestationUids() : async [Text] {
+        return Iter.toArray(attestations.keys());
     };
 
     public query func getInitializer() : async Principal {
