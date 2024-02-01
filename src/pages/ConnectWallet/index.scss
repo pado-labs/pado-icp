@@ -1,7 +1,54 @@
-@import "@css/pFlex.scss";
-@import "@css/pVars.scss";
 
-.connectWalletPage {
+@import "@css/pVars.scss";
+@import "@css/pFlex.scss";
+@mixin Text1 {
+  font-family: Inter;
+  font-size: var(--spaing-14, 14px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: var(--spacing-20, 20px);
+}
+@mixin Text2 {
+  font-family: Inter;
+  font-size: var(--spaing-12, 12px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: var(--spacing-16, 16px); /* 133.333% */
+}
+@mixin Headline3 {
+  font-family: Inter;
+  font-size: var(--spacing-24, 24px);
+  font-style: normal;
+  font-weight: 600;
+  line-height: var(--spacing-32, 32px); /* 133.333% */
+}
+@mixin Body2 {
+  font-family: Inter;
+  font-size:  var(--spacing-16, 16px);
+  font-style: normal;
+  font-weight: 500;
+  line-height:  var(--spacing-22, 22px); /* 137.5% */
+}
+.secretBtns {
+  display: none;
+}
+@keyframes dotsAnimation {
+  0%,
+  100% {
+    width: 0;
+  }
+  25% {
+    width: 0.3em;
+  }
+  50% {
+    width: 0.6em;
+  }
+  75% {
+    width: 1em;
+  }
+}
+
+.connectWalletPageWrapper {
   @include frcc;
   width: 100vw;
   height: 100vh;
@@ -9,18 +56,20 @@
   .cardWrapper {
     @include fcbc;
     width: 480px;
-    height: 296px;
+    // height: 296px;
 
     border-radius: var(--Spacing-24, 24px);
     background: #fff;
     backdrop-filter: blur(16px);
     padding: var(--soacing-48, 48px) var(--spacing-24, 24px)
       var(--spacing-24, 24px);
+    gap: 52px;
+    &.hasResult {
+      gap: var(--spacing-32, 32px);
+    }
     .cardBody {
       @include fcsc;
-
       gap: var(--spacing-24, 24px);
-
       .title {
         @include fcsc;
         gap: var(--spacing-12, 12px);
@@ -46,7 +95,8 @@
           gap: var(--spacing-18, 18px);
 
           background: var(--Badge, rgba(10, 18, 20, 0.05));
-          &:hover {
+          &:hover,
+          &.active {
             border: 1px solid var(--Line, #dfe0e0);
             background: var(--bg-default, #fff);
           }
@@ -55,12 +105,67 @@
             border: 2px solid var(--Linear, #70ffba);
             background: var(--bg-default, #fff);
           }
+
           .icon {
             width: var(--spacing-32, 32px);
           }
           .name {
             color: #000;
             @include Body2;
+            max-width: 262px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            .dots {
+              font-family: simsun;
+              animation: dotsAnimation 3s infinite step-start;
+              display: inline-block;
+              width: 1em;
+              vertical-align: bottom;
+              overflow: hidden;
+            }
+          }
+        }
+      }
+      .resultWrapper {
+        width: 364px;
+        padding: var(--spacing-12, 12px) var(--spacing-10, 10px);
+        @include frss;
+        gap: var(--spacing-10, 10px);
+        border-radius: 14px;
+        margin-top: calc(var(--spacing-8, 8px) * -1);
+        img {
+          width: var(--spacing-20, 20px);
+        }
+        &.suc {
+          background: #f1fbf8;
+          .desc {
+            @include fcss;
+            gap: var(--spacing-4, 4px);
+            color: var(--Text-hint, #7b7f80);
+            @include Text2;
+            p:first-child {
+              @include Text1;
+              color: #000;
+            }
+            p:last-child {
+              text-align: left;
+            }
+          }
+        }
+        &.error {
+          background: #eef5fc;
+          .desc {
+            @include fcss;
+            gap: var(--spacing-4, 4px);
+            @include Text1;
+            p:first-child {
+              color: #000;
+            }
+            p:last-child {
+              text-align: left;
+              color: rgba(0, 0, 0, 0.6);
+            }
           }
         }
       }

@@ -1,63 +1,200 @@
-import React from "react";
-import iconOKX from "@/assets/img/connectWallet/iconOKX.svg";
+import React, { useState, useMemo, useCallback, useEffect } from "react";
+import iconWalletPlugWallet from "@/assets/img/connectWallet/iconWalletPlugWallet.svg";
 import padoColorful from "@/assets/img/connectWallet/padoColorful.svg";
+import iconSuc from "@/assets/img/connectWallet/iconSuc.svg";
+import iconWarn from "@/assets/img/connectWallet/iconWarn.svg";
+
 import "./index.scss";
-const connectWallet = ({ children }) => {
-  return (
-    <div className="connectWalletPage">
-      <div className="cardWrapper">
-        <div className="cardBody">
-          <div className="title">
-            <h1>Connect your wallet</h1>
-            <h2>
-              Authorize through your web3 wallet address to PADO extension
-            </h2>
+
+const ConnectWallet = ({ children }) => {
+  const [activeStep, setActiveStep] = useState("");
+  const [walletAddress, setWalletAddress] = useState("");
+  const cardWrapperClassName = useMemo(() => {
+    let cN = "cardWrapper";
+    if (activeStep === "submitSuc" || activeStep === "submitError") {
+      cN += " hasResult";
+    }
+    return cN;
+  }, [activeStep]);
+  const formatName = useMemo(() => {
+    let str;
+    switch (activeStep) {
+      case "connected":
+        str = `Connected!`;
+        break;
+      case "submitting":
+        str = (
+          <div>
+            Request Connecting <i className="dots">...</i>
           </div>
-          <ul className="walletList">
-            <li className="wallet">
-              <img className="icon" src={iconOKX} alt=""></img>
-              <div className="name">OKX Wallet</div>
-            </li>
-          </ul>
-        </div>
+        );
+        break;
+      case "submitSuc":
+        str = "Congratulations!";
+        break;
+      case "":
+      case "submitError":
+        str = "Connect Wallet";
+        break;
+    }
+    return str;
+  }, [activeStep]);
+  const liClassName = useMemo(() => {
+    let str = "wallet";
+    if (activeStep !== "" && activeStep !== "submitError") {
+      str += " active";
+    }
+    return str;
+  }, [activeStep]);
+  const connectWalletFn = useCallback(async () => {
+    try {
+      if (walletAddress) {
+        return;
+      }
+      setActiveStep("submitting");
+      const publicKey = await window.ic.plug.requestConnect();
+      console.log(`The connected user's public key is:`, publicKey);
+      console.log(
+        `The connected user's principalId is:`,
+        window.ic.plug.principalId
+      );
+      setWalletAddress(window.ic.plug.principalId);
+      setActiveStep("connected");
+      window.postMessage(
+        {
+          target: "padoExtension",
+          name: "icp",
+          params: {
+            operation: "connectWallet",
+            result: true,
+            params: {
+              address: window.ic.plug.principalId,
+            },
+          },
+        },
+        "*"
+      );
+    } catch (e) {
+      console.log(e);
+      setActiveStep("submitError");
+      window.postMessage(
+        {
+          target: "padoExtension",
+          name: "icp",
+          params: {
+            operation: "connectWallet",
+            result: false,
+            params: {},
+          },
+        },
+        "*"
+      );
+    }
+  }, [walletAddress]);
+  useEffect(() => {
+    connectWalletFn();
+  }, []);
+  const upperChainFn = async (entry) => {
+    try {
+      console.log("************************* before start");
+      const attestParams = entry.eip712MessageRawDataWithSignature.message;
+      attestParams.signature = entry.signature;
 
-        <footer>
-          <img src={padoColorful} alt="" />
-        </footer>
-      </div>
-    </div>
-  );
-};
-export default connectWallet;
+      var s = attestParams.data.substring(2);
+      var result = [];
 
-<main className="pageWrapper">
+      for (var i = 0; i < s.length; i += 2) {
+        result.push(parseInt(s.substring(i, i + 2), 16));
+      }
+      result = Uint8Array.from(result);
+      attestParams.data = result;
+      console.log("attest params", attestParams);
+      const res = await attestationregistry.attest(attestParams, "PADO Labs");
+      console.log("attest res", res);
+      const getAttestationRes = await attestationregistry.getAttestation(res);
+      console.log("getAttestation res", getAttestationRes);
+      const getAttestationUidsRes =
+        await attestationregistry.getAttestationUids();
+      console.log("getAttestationUidsRes res", getAttestationUidsRes);
+      window.postMessage(
+        {
+          target: "padoExtension",
+          name: "icp",
+          params: {
+            operation: "upperChain",
+            result: true,
+            params: {
+              attestationId: res,
+              attestationDetailPath:
+                window.location.href + "?attestationId=" + res,
+              signature: entry.signature,
+            },
+          },
+        },
+        "*"
+      );
+    } catch {
+      window.postMessage(
+        {
+          target: "padoExtension",
+          name: "icp",
+          params: {
+            operation: "upperChain",
+            result: false,
+            params: {},
+          },
+        },
+        "*"
+      );
+    }
+  };
+  useEffect(() => {
+    const listenerFn = (e) => {
+      const { target, name, params } = e.data;
+      if (target === "padoIcp") {
+        console.log("padoIcp onMessage", e.data);
+        if (name === "upperChain") {
+          upperChainFn(params);
+        }
+      }
+    };
+    window.addEventListener("message", listenerFn, false);
+    return () => {
+      window.removeEventListener("message", listenerFn);
+    };
+  }, [upperChainFn]);
+
+  return (
+    <main className="connectWalletPageWrapper">
       <div className={cardWrapperClassName}>
         <div className="cardBody">
           <div className="title">
-            <h1>Submit to BNB Greenfield</h1>
-            <h2>
-              Authorize to change the network and complete the submission.
-            </h2>
+            <h1>Connect to Plug Wallet</h1>
+            <h2>Authorize to sign and connect.</h2>
           </div>
           <ul className="walletList">
-            <li className={liClassName} onClick={handleClick}>
-              <Image className="icon" src={iconMetaMask} alt="" />
+            <li className={liClassName} onClick={connectWalletFn}>
+              <img className="icon" src={iconWalletPlugWallet} alt="" />
               <div className="name">{formatName}</div>
             </li>
           </ul>
-          {activeStep === "submitSuc" && (
-            <div className="resultWrapper suc">
-              <Image src={iconSuc} alt="" />
-              <div className="desc">
-                Please back to the PADO extension to continue the BAS
-                Attestation Alliance. This page will close automatically in
-                several seconds, or you can manually close it.
+          {activeStep === "submitSuc" ||
+            (activeStep === "connected" && (
+              <div className="resultWrapper suc">
+                <img src={iconSuc} alt="" />
+                <div className="desc">
+                  <p>Congratulations!</p>
+                  <p>
+                    Please check the PADO extension for more information. This
+                    page will close automatically in several seconds, or you can
+                    manually close it.
+                  </p>
+                </div>
               </div>
-            </div>
-          )}
+            ))}
           {activeStep === "submitError" && (
             <div className="resultWrapper error">
-              <Image src={iconWarn} alt="" />
+              <img src={iconWarn} alt="" />
               <div className="desc">
                 <p>Unable to proceed</p>
                 <p>Your wallet declined authorization. Please try again.</p>
@@ -66,18 +203,21 @@ export default connectWallet;
           )}
         </div>
         <footer>
-          <Image src={padoColorful} alt="" />
+          <img src={padoColorful} alt="" />
         </footer>
       </div>
-      <div className="secretBtns">
-        <button ref={regenerateRef as any} id="regenerate">
+      {/* <div className="secretBtns">
+        <button ref={regenerateRef} id="regenerate">
           regenerate
         </button>
         <button id="upperChain" onClick={handleUpperChainStep2}>
           upperChain2
         </button>
-        <button ref={completeRef as any} id="completeUpperChain">
+        <button ref={completeRef} id="completeUpperChain">
           complete
         </button>
-      </div>
+      </div> */}
     </main>
+  );
+};
+export default ConnectWallet;

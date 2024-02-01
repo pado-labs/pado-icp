@@ -6,6 +6,7 @@ import ContactUs from "@/pages/ContactUs";
 import MobileMenu from "@/pages/MobileMenu";
 import About from "@/pages/About";
 import Unsubscribe from "@/pages/Unsubscribe";
+import ConnectWallet from "@/pages/ConnectWallet";
 
 const router = [
   {
@@ -37,6 +38,10 @@ const router = [
         element: <Unsubscribe />,
       },
     ],
+  },
+  {
+    path: "/other",
+    children: [{ path: "connectWallet", element: <ConnectWallet /> }],
   },
 ];
 
