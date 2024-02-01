@@ -1,13 +1,10 @@
-type anon_class_4_1 = 
- service {
-   get: (text) -> (opt Entry) query;
-   getInitializer: () -> (principal) query;
-   set: (text, Entry) -> (principal);
- };
 type Entry = 
  record {
    content: text;
    result: text;
    source: text;
  };
-service : () -> anon_class_4_1
+service : {
+  get: (text) -> (opt Entry) query;
+  set: (text, Entry) -> ();
+}

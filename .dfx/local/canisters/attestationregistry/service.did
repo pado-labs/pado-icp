@@ -13,9 +13,10 @@ type AttestationPayload = record {
   expirationTime : nat64;
   refUID : text;
 };
-type anon_class_10_1 = service {
+type anon_class_11_1 = service {
   attest : (AttestationPayload, text) -> (text);
   getAttestation : (text) -> (opt Attestation) query;
+  getAttestationUids : () -> (vec text) query;
   getInitializer : () -> (principal) query;
 };
-service : anon_class_10_1
+service : anon_class_11_1

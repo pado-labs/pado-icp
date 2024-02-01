@@ -16,9 +16,10 @@ export interface AttestationPayload {
   'expirationTime' : bigint,
   'refUID' : string,
 }
-export interface anon_class_10_1 {
+export interface anon_class_11_1 {
   'attest' : ActorMethod<[AttestationPayload, string], string>,
   'getAttestation' : ActorMethod<[string], [] | [Attestation]>,
+  'getAttestationUids' : ActorMethod<[], Array<string>>,
   'getInitializer' : ActorMethod<[], Principal>,
 }
-export interface _SERVICE extends anon_class_10_1 {}
+export interface _SERVICE extends anon_class_11_1 {}

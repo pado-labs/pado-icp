@@ -4,16 +4,16 @@
   "config": {
     "http_handler": {
       "port": null,
-      "write_port_to": "/Users/fksyuan/work/code/pado-labs/pado-icp/.dfx/network/local/replica-configuration/replica-1.port"
+      "write_port_to": "/Users/yangshenmeng/Documents/bd/pado-icp/.dfx/network/local/replica-configuration/replica-1.port"
     },
     "state_manager": {
-      "state_root": "/Users/fksyuan/work/code/pado-labs/pado-icp/.dfx/network/local/state/replicated_state"
+      "state_root": "/Users/yangshenmeng/Documents/bd/pado-icp/.dfx/network/local/state/replicated_state"
     },
     "crypto": {
-      "crypto_root": "/Users/fksyuan/work/code/pado-labs/pado-icp/.dfx/network/local/state/crypto_store"
+      "crypto_root": "/Users/yangshenmeng/Documents/bd/pado-icp/.dfx/network/local/state/crypto_store"
     },
     "artifact_pool": {
-      "consensus_pool_path": "/Users/fksyuan/work/code/pado-labs/pado-icp/.dfx/network/local/state/consensus_pool"
+      "consensus_pool_path": "/Users/yangshenmeng/Documents/bd/pado-icp/.dfx/network/local/state/consensus_pool"
     },
     "subnet_type": "application",
     "btc_adapter": {
@@ -22,7 +22,7 @@
     },
     "canister_http_adapter": {
       "enabled": true,
-      "socket_path": "/var/folders/k7/6zsrny_97j92ytgk56w0zsr80000gn/T/ic-https-outcalls-adapter-socket.8534.1705654344"
+      "socket_path": "/var/folders/xd/m8x0drm96r57zcb4hy01lypw0000gn/T/ic-https-outcalls-adapter-socket.20743.1706769331"
     },
     "log_level": "error",
     "artificial_delay": 600,

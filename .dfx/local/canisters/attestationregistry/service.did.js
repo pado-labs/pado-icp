@@ -14,11 +14,12 @@ export const idlFactory = ({ IDL }) => {
     'attestationPayload' : AttestationPayload,
     'attester' : IDL.Text,
   });
-  const anon_class_10_1 = IDL.Service({
+  const anon_class_11_1 = IDL.Service({
     'attest' : IDL.Func([AttestationPayload, IDL.Text], [IDL.Text], []),
     'getAttestation' : IDL.Func([IDL.Text], [IDL.Opt(Attestation)], ['query']),
+    'getAttestationUids' : IDL.Func([], [IDL.Vec(IDL.Text)], ['query']),
     'getInitializer' : IDL.Func([], [IDL.Principal], ['query']),
   });
-  return anon_class_10_1;
+  return anon_class_11_1;
 };
 export const init = ({ IDL }) => { return []; };

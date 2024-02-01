@@ -1,0 +1,76 @@
+@import "@css/pFlex.scss";
+@import "@css/pVars.scss";
+
+.connectWalletPage {
+  @include frcc;
+  width: 100vw;
+  height: 100vh;
+  background: #f8f9fb;
+  .cardWrapper {
+    @include fcbc;
+    width: 480px;
+    height: 296px;
+
+    border-radius: var(--Spacing-24, 24px);
+    background: #fff;
+    backdrop-filter: blur(16px);
+    padding: var(--soacing-48, 48px) var(--spacing-24, 24px)
+      var(--spacing-24, 24px);
+    .cardBody {
+      @include fcsc;
+
+      gap: var(--spacing-24, 24px);
+
+      .title {
+        @include fcsc;
+        gap: var(--spacing-12, 12px);
+        > h1 {
+          color: var(--Text-headline, #0a1214);
+          @include Headline3;
+        }
+        > h2 {
+          color: var(--Text-hint, #7b7f80);
+          @include Text2;
+        }
+      }
+      .walletList {
+        @include fcsc;
+        .wallet {
+          width: 364px;
+          height: 72px;
+
+          border-radius: var(--spacing-14, 14px);
+
+          padding: var(--spacing-20, 20px) var(--spacing-26, 26px);
+          @include frsc;
+          gap: var(--spacing-18, 18px);
+
+          background: var(--Badge, rgba(10, 18, 20, 0.05));
+          &:hover {
+            border: 1px solid var(--Line, #dfe0e0);
+            background: var(--bg-default, #fff);
+          }
+          &:active {
+            border-radius: 14px;
+            border: 2px solid var(--Linear, #70ffba);
+            background: var(--bg-default, #fff);
+          }
+          .icon {
+            width: var(--spacing-32, 32px);
+          }
+          .name {
+            color: #000;
+            @include Body2;
+          }
+        }
+      }
+    }
+    footer {
+      @include frcc;
+      width: 100%;
+      > img {
+        width: 62px;
+      }
+    }
+  }
+}

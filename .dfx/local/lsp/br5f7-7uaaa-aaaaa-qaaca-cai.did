@@ -1,21 +1,12 @@
-type Attestation = record {
-  attestationId : text;
-  attestationPayload : AttestationPayload;
-  attester : text;
+type Entry = record {
+  schemaString : text;
+  context : text;
+  name : text;
+  description : text;
 };
-type AttestationPayload = record {
-  signature : text;
-  schema : text;
-  data : vec nat8;
-  revocable : bool;
-  recipient : text;
-  deadline : nat64;
-  expirationTime : nat64;
-  refUID : text;
-};
-type anon_class_10_1 = service {
-  attest : (AttestationPayload, text) -> (text);
-  getAttestation : (text) -> (opt Attestation) query;
+type anon_class_7_1 = service {
+  createSchema : (Entry) -> (text);
   getInitializer : () -> (principal) query;
+  getSchema : (text) -> (opt Entry) query;
 };
-service : anon_class_10_1
+service : anon_class_7_1

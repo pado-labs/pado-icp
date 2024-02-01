@@ -1,7 +1,22 @@
-type Entry = record { result : text; content : text; source : text };
-type anon_class_4_1 = service {
-  get : (text) -> (opt Entry) query;
-  getInitializer : () -> (principal) query;
-  set : (text, Entry) -> (principal);
+type Attestation = record {
+  attestationId : text;
+  attestationPayload : AttestationPayload;
+  attester : text;
 };
-service : anon_class_4_1
+type AttestationPayload = record {
+  signature : text;
+  schema : text;
+  data : vec nat8;
+  revocable : bool;
+  recipient : text;
+  deadline : nat64;
+  expirationTime : nat64;
+  refUID : text;
+};
+type anon_class_11_1 = service {
+  attest : (AttestationPayload, text) -> (text);
+  getAttestation : (text) -> (opt Attestation) query;
+  getAttestationUids : () -> (vec text) query;
+  getInitializer : () -> (principal) query;
+};
+service : anon_class_11_1

@@ -6,6 +6,5 @@ type Entry =
  };
 service : {
   get: (text) -> (opt Entry) query;
-  getInitializer: () -> (principal) query;
-  set: (text, Entry) -> (principal);
+  set: (text, Entry) -> ();
 }

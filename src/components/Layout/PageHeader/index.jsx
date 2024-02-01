@@ -1,7 +1,7 @@
 import React, { useState, useMemo, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import useBreakPoint from "@/hooks/useBreakPoint";
-import { padoportal } from "@/declarations/padoportal";
+import { attestationregistry } from "@/declarations/attestationregistry";
 //import { Entry } from "@/declarations/padoportal/padoportal.did";
 import { PADODOCURL, PADOEXTENSIONDOWNLOADURL } from "@/config/constants";
 import logo from "@img/home/logo.svg";
@@ -64,17 +64,65 @@ const PageHeader = () => {
     }
   };
   const upperChainFn = async () => {
-    const padoUpperChainInfoStr = localStorage.getItem("padoUpperChainInfo");
-    console.log("************************* before start");
-    const v = await padoportal.get(icpAddress);
-    const entry = JSON.parse(padoUpperChainInfoStr);
-    console.log("upper chain info", entry);
-    const res = await padoportal.set(icpAddress, entry);
-    const newv = await padoportal.get(icpAddress);
-    //const greeting = await counter.increment();
-    //const newV = await counter.getValue();
-    console.log("*********** 2221,v,", v, res, newv);
-    setIcpAddress2(process.env.REACT_APP_CONTRACT_ADDR);
+    try {
+      const padoUpperChainInfoStr = localStorage.getItem("padoUpperChainInfo");
+      console.log("************************* before start");
+
+      const entry = JSON.parse(padoUpperChainInfoStr);
+      // const v = await padoportal.get(icpAddress);
+      // console.log("upper chain info", entry);
+      // const res = await padoportal.set(icpAddress, entry);
+      // const newv = await padoportal.get(icpAddress);
+
+      const attestParams = entry.eip712MessageRawDataWithSignature.message;
+      attestParams.signature = entry.signature;
+
+      var s = attestParams.data.substring(2);
+      var result = [];
+
+      for (var i = 0; i < s.length; i += 2) {
+        result.push(parseInt(s.substring(i, i + 2), 16));
+      }
+      result = Uint8Array.from(result);
+      attestParams.data = result;
+      console.log("attest params", attestParams);
+      const res = await attestationregistry.attest(attestParams, "PADO Labs");
+      console.log("attest res", res);
+      const getAttestationRes = await attestationregistry.getAttestation(res);
+      console.log("getAttestation res", getAttestationRes);
+      const getAttestationUidsRes =
+        await attestationregistry.getAttestationUids();
+      console.log("getAttestationUidsRes res", getAttestationUidsRes);
+      window.postMessage(
+        {
+          target: "padoExtension",
+          name: "icp",
+          params: {
+            operation: "upperChain",
+            result: true,
+            params: {
+              attestationId: res,
+              attestationDetailPath: window.location.href + "?attestationId=" + res,
+              signature: entry.signature
+            },
+          },
+        },
+        "*"
+      );
+    } catch {
+      window.postMessage(
+        {
+          target: "padoExtension",
+          name: "icp",
+          params: {
+            operation: "upperChain",
+            result: false,
+            params: {},
+          },
+        },
+        "*"
+      );
+    }
   };
   const onClickNav = (navItem) => {
     const actPath = navItem.path;
