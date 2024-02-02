@@ -1,0 +1,48 @@
+@import "@css/pVars.scss";
+@import "@css/pFlex.scss";
+@mixin Text1 {
+  font-family: Inter;
+  font-size: var(--spaing-14, 14px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: var(--spacing-20, 20px);
+}
+@mixin Text2 {
+  font-family: Inter;
+  font-size: var(--spaing-12, 12px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: var(--spacing-16, 16px); /* 133.333% */
+}
+@mixin Headline3 {
+  font-family: Inter;
+  font-size: var(--spacing-24, 24px);
+  font-style: normal;
+  font-weight: 600;
+  line-height: var(--spacing-32, 32px); /* 133.333% */
+}
+@mixin Body2 {
+  font-family: Inter;
+  font-size: var(--spacing-16, 16px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: var(--spacing-22, 22px); /* 137.5% */
+}
+
+.attestationDetailPage {
+  @include frcc;
+  width: 100vw;
+  height: 100vh;
+  background: #f8f9fb;
+  > ul {
+    width: 100%;
+    > li {
+      width: 100%;
+      @include frsc;
+      @include Text2;
+      .label {
+        width: 150px;
+      }
+    }
+  }
+}

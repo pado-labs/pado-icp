@@ -1,4 +1,7 @@
-import React, { useState, useMemo, useCallback, useEffect } from "react";
+import React, { useState, useMemo, useCallback, useEffect, memo } from "react";
+import { useSearchParams } from "react-router-dom";
+import { attestationregistry } from "@/declarations/attestationregistry";
+
 import iconWalletPlugWallet from "@/assets/img/connectWallet/iconWalletPlugWallet.svg";
 import padoColorful from "@/assets/img/connectWallet/padoColorful.svg";
 import iconSuc from "@/assets/img/connectWallet/iconSuc.svg";
@@ -6,7 +9,9 @@ import iconWarn from "@/assets/img/connectWallet/iconWarn.svg";
 
 import "./index.scss";
 
-const ConnectWallet = ({ children }) => {
+const ConnectWallet = memo(({ children }) => {
+  const [searchParams] = useSearchParams();
+  const operation = searchParams.get("operation");
   const [activeStep, setActiveStep] = useState("");
   const [walletAddress, setWalletAddress] = useState("");
   const cardWrapperClassName = useMemo(() => {
@@ -29,6 +34,14 @@ const ConnectWallet = ({ children }) => {
           </div>
         );
         break;
+      case "submittingChain":
+        str = (
+          <div>
+            Submitting to ICP <i className="dots">...</i>
+          </div>
+        );
+        break;
+
       case "submitSuc":
         str = "Congratulations!";
         break;
@@ -63,9 +76,10 @@ const ConnectWallet = ({ children }) => {
       window.postMessage(
         {
           target: "padoExtension",
-          name: "icp",
+          origin: "padoIcp",
+          name: "connectWalletRes",
           params: {
-            operation: "connectWallet",
+            operation: "connectWalletRes",
             result: true,
             params: {
               address: window.ic.plug.principalId,
@@ -80,9 +94,10 @@ const ConnectWallet = ({ children }) => {
       window.postMessage(
         {
           target: "padoExtension",
-          name: "icp",
+          origin: "padoIcp",
+          name: "connectWalletRes",
           params: {
-            operation: "connectWallet",
+            operation: "connectWalletRes",
             result: false,
             params: {},
           },
@@ -91,18 +106,20 @@ const ConnectWallet = ({ children }) => {
       );
     }
   }, [walletAddress]);
-  useEffect(() => {
-    connectWalletFn();
-  }, []);
-  const upperChainFn = async (entry) => {
+  const handleClick = useCallback(() => {
+    if (activeStep === "") {
+      connectWalletFn();
+    }
+  }, [activeStep]);
+
+  const upperChainFn = useCallback(async (entry) => {
     try {
+      setActiveStep("submittingChain");
       console.log("************************* before start");
       const attestParams = entry.eip712MessageRawDataWithSignature.message;
       attestParams.signature = entry.signature;
-
       var s = attestParams.data.substring(2);
       var result = [];
-
       for (var i = 0; i < s.length; i += 2) {
         result.push(parseInt(s.substring(i, i + 2), 16));
       }
@@ -119,9 +136,10 @@ const ConnectWallet = ({ children }) => {
       window.postMessage(
         {
           target: "padoExtension",
-          name: "icp",
+          origin: "padoIcp",
+          name: "upperChainRes",
           params: {
-            operation: "upperChain",
+            operation: "upperChainRes",
             result: true,
             params: {
               attestationId: res,
@@ -133,26 +151,29 @@ const ConnectWallet = ({ children }) => {
         },
         "*"
       );
+      setActiveStep("submitSuc");
     } catch {
       window.postMessage(
         {
           target: "padoExtension",
-          name: "icp",
+          origin: "padoIcp",
+          name: "upperChainRes",
           params: {
-            operation: "upperChain",
+            operation: "upperChainRes",
             result: false,
             params: {},
           },
         },
         "*"
       );
+      setActiveStep("submitError");
     }
-  };
+  }, []);
   useEffect(() => {
     const listenerFn = (e) => {
       const { target, name, params } = e.data;
       if (target === "padoIcp") {
-        console.log("padoIcp onMessage", e.data);
+        console.log("padoIcp onMessage", e.data, new Date());
         if (name === "upperChain") {
           upperChainFn(params);
         }
@@ -163,6 +184,13 @@ const ConnectWallet = ({ children }) => {
       window.removeEventListener("message", listenerFn);
     };
   }, [upperChainFn]);
+  useEffect(() => {
+    // connectWalletFn();
+    if (operation === "connectWallet") {
+      connectWalletFn();
+    } else if (operation === "upperChain") {
+    }
+  }, []);
 
   return (
     <main className="connectWalletPageWrapper">
@@ -173,7 +201,7 @@ const ConnectWallet = ({ children }) => {
             <h2>Authorize to sign and connect.</h2>
           </div>
           <ul className="walletList">
-            <li className={liClassName} onClick={connectWalletFn}>
+            <li className={liClassName} onClick={handleClick}>
               <img className="icon" src={iconWalletPlugWallet} alt="" />
               <div className="name">{formatName}</div>
             </li>
@@ -219,5 +247,5 @@ const ConnectWallet = ({ children }) => {
       </div> */}
     </main>
   );
-};
+});
 export default ConnectWallet;

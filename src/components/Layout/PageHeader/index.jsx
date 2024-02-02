@@ -11,16 +11,17 @@ import PButton from "@/components/PButton";
 import "./index.scss";
 
 let navList = [
-  { name: "Techniques", path: "/#allYouNeed" },
+  // { name: "Techniques", path: "/#allYouNeed" },
   // { name: "About Us", path: "/about" },
   { name: "Docs", path: PADODOCURL },
   // { name: "Pricing", path: PADODOCURL },
-  { name: "Contact", path: "/contactUs" },
+  // { name: "Contact", path: "/contactUs" },
   // { name: "Product Trial", path: "/product-trial" },
+  { name: "View Attestations", path: "/attestationsList" },
   { name: "Get Started", path: PADOEXTENSIONDOWNLOADURL },
-  { name: "Connect Plug", path: "" },
+  // { name: "Connect Plug", path: "" },
   // { name: "Connect Pado", path: "" },
-  { name: "Upper Chain", path: "" },
+  // { name: "Upper Chain", path: "" },
 ];
 
 const PageHeader = () => {
