@@ -15,7 +15,7 @@ let navList = [
   // { name: "About Us", path: "/about" },
   {
     name: "Docs",
-    path: " https://github.com/pado-labs/pado-icp/blob/main/README.md",
+    path: "https://github.com/pado-labs/pado-icp/blob/main/README.md",
   },
   // { name: "Pricing", path: PADODOCURL },
   // { name: "Contact", path: "/contactUs" },
