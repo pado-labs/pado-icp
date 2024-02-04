@@ -15,6 +15,7 @@
     "dotenv-cli": "^7.3.0",
     "echarts": "^5.4.3",
     "echarts-for-react": "^3.0.2",
+    "ethers": "5.7.2",
     "lib-flexible": "^0.3.2",
     "postcss-pxtorem": "^6.0.0",
     "qrcode.react": "^3.1.0",

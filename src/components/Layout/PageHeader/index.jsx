@@ -13,7 +13,10 @@ import "./index.scss";
 let navList = [
   // { name: "Techniques", path: "/#allYouNeed" },
   // { name: "About Us", path: "/about" },
-  { name: "Docs", path: PADODOCURL },
+  {
+    name: "Docs",
+    path: " https://github.com/pado-labs/pado-icp/blob/main/README.md",
+  },
   // { name: "Pricing", path: PADODOCURL },
   // { name: "Contact", path: "/contactUs" },
   // { name: "Product Trial", path: "/product-trial" },
@@ -127,7 +130,7 @@ const PageHeader = () => {
   };
   const onClickNav = (navItem) => {
     const actPath = navItem.path;
-    if (actPath.startsWith("http")) {
+    if (actPath.startsWith("http") || actPath.startsWith("https")) {
       window.open(actPath);
     } else {
       setActiveNav(navItem.name);

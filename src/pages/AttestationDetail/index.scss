@@ -30,18 +30,41 @@
 }
 
 .attestationDetailPage {
-  @include frcc;
+  @include frss;
   width: 100vw;
   height: 100vh;
   background: #f8f9fb;
-  > ul {
-    width: 100%;
-    > li {
+  .contentWidth {
+    padding-top: 50px;
+    h1 {
+      text-align: left;
+      margin-bottom: 20px;
+    }
+    > ul {
       width: 100%;
-      @include frsc;
-      @include Text2;
-      .label {
-        width: 150px;
+      > li {
+        width: 100%;
+        height: 50px;
+        margin-bottom: 8px;
+        border-radius: 5px;
+        @include frsc;
+        @include Text2;
+        .label {
+          @include frsc;
+          width: 150px;
+          height: 100%;
+          padding: 8px;
+          background-color: rgba(203, 250, 255, 0.8);
+          border-radius:5px 0 0 5px;
+        }
+        .value{
+          @include frsc;
+          padding-left: 20px;
+          flex: 1;
+          height: 100%;
+          background-color: rgba(203, 250, 255, 0.2);
+          border-radius:0 0 5px 5px;
+        }
       }
     }
   }
