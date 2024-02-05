@@ -1,19 +1,21 @@
 import React, { useState, useMemo, useCallback, useEffect, memo } from "react";
 
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { attestationregistry } from "@/declarations/attestationregistry";
 import "./index.scss";
 
 const ConnectWallet = memo(({ children }) => {
+  const [searchParams] = useSearchParams();
+  const canisterId = searchParams.get("canisterId");
   const navigate = useNavigate();
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
 
   const handleDetail = useCallback(
     (id) => {
-      navigate(`/attestationsDetail?id=${id}`);
+      navigate(`/attestationsDetail?canisterId=${canisterId}&id=${id}`);
     },
-    [navigate]
+    [navigate, canisterId]
   );
 
   const fetchData = useCallback(async () => {

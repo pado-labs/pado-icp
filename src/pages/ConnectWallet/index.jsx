@@ -146,7 +146,9 @@ const ConnectWallet = memo(({ children }) => {
               attestationDetailPath:
                 window.location.protocol +
                 window.location.host +
-                "/attestationDetail?attestationId=" +
+                "/attestationsDetail?canisterId=" +
+                canisterId +
+                "&id=" +
                 res,
               signature: entry.signature,
             },
