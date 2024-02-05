@@ -12,6 +12,7 @@ import "./index.scss";
 const ConnectWallet = memo(({ children }) => {
   const [searchParams] = useSearchParams();
   const operation = searchParams.get("operation");
+  const canisterId = searchParams.get("canisterId");
   const [activeStep, setActiveStep] = useState("");
   const [walletAddress, setWalletAddress] = useState("");
   const cardWrapperClassName = useMemo(() => {
