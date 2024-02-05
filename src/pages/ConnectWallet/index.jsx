@@ -144,7 +144,10 @@ const ConnectWallet = memo(({ children }) => {
             params: {
               attestationId: res,
               attestationDetailPath:
-                window.location.href + "?attestationId=" + res,
+                window.location.protocol +
+                window.location.host +
+                "/attestationDetail?attestationId=" +
+                res,
               signature: entry.signature,
             },
           },
