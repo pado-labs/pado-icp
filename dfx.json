@@ -1,9 +1,5 @@
 {
   "canisters": {
-    "padoportal": {
-      "main": "canisters/padoportal/main.mo",
-      "type": "motoko"
-    },
     "schemaregistry": {
       "main": "canisters/schemaregistry/main.mo",
       "type": "motoko"
@@ -14,7 +10,6 @@
     },
     "assets": {
       "dependencies": [
-        "padoportal",
         "attestationregistry",
         "schemaregistry"
       ],
