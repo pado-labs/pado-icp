@@ -18,18 +18,13 @@ const ConnectWallet = memo(({ children }) => {
 
   const fetchData = useCallback(async () => {
     setLoading(true);
-    // const getAttestationUidsRes =
-    //   await attestationregistry.getAttestationUids();
-    // console.log("getAttestationUidsRes res", getAttestationUidsRes);
-    // const formatData = getAttestationUidsRes.map((i) => {
-    //   return { AttestationUid: i, key: i };
-    // });
-    setData([
-      {
-        key: "1",
-        AttestationUid: "1",
-      },
-    ]);
+    const getAttestationUidsRes =
+      await attestationregistry.getAttestationUids();
+    console.log("getAttestationUidsRes res", getAttestationUidsRes);
+    const formatData = getAttestationUidsRes.map((i) => {
+      return { AttestationUid: i, key: i };
+    });
+    setData(formatData);
     setLoading(false);
   }, []);
   useEffect(() => {

@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, useSearchParams } from "react-router-dom";
 import useBreakPoint from "@/hooks/useBreakPoint";
 import { attestationregistry } from "@/declarations/attestationregistry";
 //import { Entry } from "@/declarations/padoportal/padoportal.did";
@@ -10,29 +10,29 @@ import iconMenu from "@img/home/iconMenu.svg";
 import PButton from "@/components/PButton";
 import "./index.scss";
 
-let navList = [
-  // { name: "Techniques", path: "/#allYouNeed" },
-  // { name: "About Us", path: "/about" },
-  {
-    name: "Docs",
-    path: "https://github.com/pado-labs/pado-icp/blob/main/README.md",
-  },
-  // { name: "Pricing", path: PADODOCURL },
-  // { name: "Contact", path: "/contactUs" },
-  // { name: "Product Trial", path: "/product-trial" },
-  { name: "View Attestations", path: "/attestationsList" },
-  { name: "Get Started", path: PADOEXTENSIONDOWNLOADURL },
-  // { name: "Connect Plug", path: "" },
-  // { name: "Connect Pado", path: "" },
-  // { name: "Upper Chain", path: "" },
-];
-
 const PageHeader = () => {
   const [icpAddress, setIcpAddress] = useState();
   const [icpAddress2, setIcpAddress2] = useState();
   const [isScroll, setIsScroll] = useState(false);
   const breakPoint = useBreakPoint();
   const location = useLocation();
+  const [searchParams] = useSearchParams();
+  const canisterId = searchParams.get("canisterId");
+
+  const navList = useMemo(() => {
+    let list = [
+      {
+        name: "Docs",
+        path: "https://github.com/pado-labs/pado-icp/blob/main/README.md",
+      },
+      {
+        name: "View Attestations",
+        path: `/attestationsList?canisterId=${canisterId}`,
+      },
+      { name: "Get Started", path: PADOEXTENSIONDOWNLOADURL },
+    ];
+    return list;
+  }, [canisterId]);
   const pathname = useMemo(() => {
     return location.pathname;
   }, [location]);
@@ -64,7 +64,7 @@ const PageHeader = () => {
   };
   const connectPadoFn = async () => {
     if (!icpAddress) {
-      alert('please connect plug wallet first!')
+      alert("please connect plug wallet first!");
     }
   };
   const upperChainFn = async () => {
@@ -106,8 +106,9 @@ const PageHeader = () => {
             result: true,
             params: {
               attestationId: res,
-              attestationDetailPath: window.location.href + "?attestationId=" + res,
-              signature: entry.signature
+              attestationDetailPath:
+                window.location.href + "?attestationId=" + res,
+              signature: entry.signature,
             },
           },
         },
@@ -221,7 +222,7 @@ const PageHeader = () => {
         )}
         {breakPoint !== "s" && (
           <ul className="navs">
-            {navList.map((i,k) => {
+            {navList.map((i, k) => {
               return (
                 <li
                   className={
@@ -246,9 +247,12 @@ const PageHeader = () => {
                     onClickNav(i);
                   }}
                 >
-                  {["Get Started", "Connect Plug", "Connect Pado", 'Upper Chain'].includes(
-                    i.name
-                  ) ? (
+                  {[
+                    "Get Started",
+                    "Connect Plug",
+                    "Connect Pado",
+                    "Upper Chain",
+                  ].includes(i.name) ? (
                     <PButton text={i.name}></PButton>
                   ) : (
                     i.name

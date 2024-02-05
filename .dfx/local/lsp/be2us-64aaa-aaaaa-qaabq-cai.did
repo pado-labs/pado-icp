@@ -1,10 +1,12 @@
-type Entry = 
- record {
-   content: text;
-   result: text;
-   source: text;
- };
-service : {
-  get: (text) -> (opt Entry) query;
-  set: (text, Entry) -> ();
-}
+type Entry = record {
+  schemaString : text;
+  context : text;
+  name : text;
+  description : text;
+};
+type anon_class_7_1 = service {
+  createSchema : (Entry) -> (text);
+  getInitializer : () -> (principal) query;
+  getSchema : (text) -> (opt Entry) query;
+};
+service : anon_class_7_1
