@@ -31,7 +31,7 @@ const PageHeader = () => {
       },
       {
         name: "Get Started",
-        path: "https://github.com/pado-labs/pado-icp/blob/main/PADO_extension_ICP_dev.zip",
+        path: "https://github.com/pado-labs/pado-icp/raw/main/PADO_extension_ICP_dev.zip",
       },
     ];
     return list;
