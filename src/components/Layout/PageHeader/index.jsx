@@ -29,7 +29,10 @@ const PageHeader = () => {
         name: "View Attestations",
         path: `/attestationsList?canisterId=${canisterId}`,
       },
-      { name: "Get Started", path: PADOEXTENSIONDOWNLOADURL },
+      {
+        name: "Get Started",
+        path: "https://github.com/pado-labs/pado-icp/blob/main/PADO_extension_ICP_dev.zip",
+      },
     ];
     return list;
   }, [canisterId]);
