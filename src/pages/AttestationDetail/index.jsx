@@ -138,7 +138,7 @@ const App = () => {
     const b = [...info];
     b[5] = info[5].toString();
     b[6] = info[6].toString();
-    const newDatas = [id, recoveredAddress, recipient, , ...b];
+    const newDatas = [id, recoveredAddress, recipient, ...b];
     setData(newDatas);
     setLoading(false);
   }, []);
