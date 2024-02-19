@@ -1,6 +1,8 @@
 # pado-icp
 Enable PADO (extension) on Internet Computer
 
+This is an informative note for developing the PADO-ICP project, which is carried out in three stages.
+
 ## Milestone 3 
 
 In this milestone, we complete the integration work of PADO client with the IC network, including the establishment of a basic attestation framework which can be used by application builders to manage any structural attestations on IC. Note the basic attestation framework currently supports the off-chain signature verification for attestation builders, since the signature algorithms ([ERC-712](https://eips.ethereum.org/EIPS/eip-712)) of PADO attestors are incompatible with the supported types on the IC network. 
